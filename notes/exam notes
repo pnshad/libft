@@ -1,0 +1,57 @@
+Exam
+
+*********************************************
+Sending &array[0]
+
+Wrong:		ft_swap (array[0], array[1])
+Correct		ft_swap (&array[0], &array[1]) 
+
+When we want to send array indexes 
+
+Ft-swap (&array[0], &array[1])
+
+When we want to receive them 
+
+void ft_swap(int *a, int *b) {}
+
+When we want to use them 
+
+ void ft_swap(int *a, int *b) 
+{
+	int (whatever it is)	tmp;
+	
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+*********************************************
+With pointers you do not need to return
+Above example 
+And remember we don’t return anything, living the pointers like that
+NOOOOOOO return (something); no no no 
+
+
+
+*********************************************
+adding * when defining a function that accepts pointers 
+
+Like
+Wrong : 		char		ft_strcpy(dest, src)
+Correct:		char		*ft_strcpy(dest, src)
+
+char    *ft_strcpy(char *dest, char *src)
+{
+    int i;
+
+    i = 0;
+    while (src[i] != '\0')
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
+    return (dest);
+}
+
+
+*********************************************

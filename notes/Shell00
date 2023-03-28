@@ -1,0 +1,116 @@
+Shell00
+
+Ex00
+
+I just created a file with Z inside 
+* Didn’t added the extra new line as it would have changed the output 
+
+Ex01 
+
+* To chance permission (if needed)
+
+Chmod 455 to give r--r-xr-x 
+
+* To change time 
+
+touch -t 202202152235.30 myfile.txt
+
+* To change size of the file 
+
+you can use vim 
+
+* To compress the file
+tar -cf testShell00.tar testShell00
+
+* To extract and check 
+tar -xf testShell00.tar
+(‘x’ stands for extract and ‘f’ for file) 
+
+* to check the permissions 
+ls -l 
+
+* To check the exact timestamp 
+ls -lT
+
+Ex02
+
+* Permission, timestamps, compressing(tar) & sizes 
+are as per instructions of EX01
+
+* for solving the test5 and test3 
+after creating the test3 file
+Use ‘ln’ command to create the test5 as a link to the test 3
+
+* To solve the ‘l’ on the test 06
+Use ln -s command to symlink the test06 to test0
+
+Ex03 
+
+* To copy 
+Go to the location of the pub key 
+Your identification has been saved in /Users/“your user directory”/.ssh/id_rsa.
+Your public key has been saved in /Users/“your user directory”/.ssh/id_rsa.pub.
+
+Ex04
+
+* To view file and folders based on last modified 
+ls -t 
+* To view in a comma and space separated 
+ls -m
+* To view the folders with slash 
+ls -p
+* All 
+ls -t -m -p
+
+EX05
+
+* To create a bash file 
+We add #!/bin/bash to the beginning of the file 
+* the command that shows  the log of commits (only last 5)
+- git log —max-count=5 
+* The parameter that says only show the hashes 
+--format=“%H”
+* All together 
+ git log —format=“%H” —max-count=5
+
+EX06 
+* The command that show all git files (tracked ones)
+... git ls-files 
+* The command that shows other files (untracked)
+… git ls-files —others 
+* To show the ignored files in .gitignore as well as others but not the ones that are ignored y git standard 
+… git ls-files —others —ignored —exclude-standard 
+
+EX07 
+
+* to restore the file b (wich is the modified file) from file ‘a’
+And the sw.diff file 
+... patch a sw.diff -o b 
+By using the -o we ask the modification to be written to a file called b (rather than done to a )
+
+To check the b file 
+I can check their b with diff with my b 
+
+I also can use their b and do the {diff a b > sw.diff2}
+And then diff sw.diff sw.diff2
+
+EX08 
+
+To operate find in the corrent directory .
+To only search for files -type f 
+To add multiple criteria we put them in \( here \)
+To delete -delete 
+To print -print 
+find . -type f \( -name '*~' -or -name '#*#' \) -delete -print
+
+Ex09
+
+41		string	42	42filetype 
+
+But probably I shouldn’t have compiled that 
+
+To compile 
+... file -C -m ft_magic 
+
+To test 
+... file -m ft_magic.mgc *

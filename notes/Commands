@@ -1,0 +1,35 @@
+Commands
+
+
+
+// This deletes all files except ones starting with ft & hidden files (starting with .)
+find . -type f ! -name "ft*" ! -name ".*" -delete
+
+// This deletes all files (also hidden ones) except for the test.c (good for evals)
+// ! Remember only do this on a backed up folder 
+find . -type f ! -name “test.c” -delete
+
+
+// This deletes all ft files (deletes functions) is good for creating evals 
+find . -type f -name "ft*" -delete
+
+// deletes empty folders
+find . -type d -empty -delete
+
+
+// This shows the whole directory and subdirectory structures and files 
+ls */*
+
+
+Shows all files on git 
+git ls-files *
+
+
+To compile with the 42 standards 
+cc test.c -Wall -Wextra -Werror 
+
+To compile a function without the main
+gcc -c test.c -Wall -Wextra -Werror  
+
+My token for git 
+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
