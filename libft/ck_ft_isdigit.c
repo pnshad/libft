@@ -6,14 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 05:06:46 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/26 20:19:31 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:48:51 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <assert.h>
-#include <ctype.h>
-#include "ft_isdigit.c"
+#include "libft.h"
 
 int	main(void)
 {

@@ -6,14 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:54:39 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/27 17:18:55 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:29:28 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <assert.h>
-#include <string.h>
-#include <stdio.h>
-#include "ft_memset.c"
+#include "libft.h"
 
 int	main(void)
 {

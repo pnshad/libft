@@ -1,6 +1,13 @@
 Commands
 
+// adds #include "libft.h" to line 13 of all c files in the directory
+// the reason that the command is in two lines, is that there is \n hidden in it
+find . -name '*.c' -type f -exec sed -i '' '13i\
+#include "libft.h"' {} \;
 
+
+// shows the contents of a directory sorted by their extensions (types) in columns
+ls | sort -t. -k2 | column
 
 // This deletes all files except ones starting with ft & hidden files (starting with .)
 find . -type f ! -name "ft*" ! -name ".*" -delete
