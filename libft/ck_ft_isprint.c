@@ -6,14 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:37:01 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/26 21:01:00 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:13:17 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <assert.h>
-#include <stdio.h>
-#include <ctype.h>
-#include "ft_isprint.c"
+#include "libft.h"
 
 int	main(void)
 {

@@ -6,14 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:10:41 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/26 23:22:02 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:32:19 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <assert.h>
-#include <string.h>
-#include "ft_strlen.c"
+#include "libft.h"
 
 int main(void)
 {

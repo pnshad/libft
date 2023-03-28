@@ -6,9 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:52:30 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/27 17:19:00 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:33:03 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *dest, int c, size_t n)
 {

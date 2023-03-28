@@ -6,14 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 19:30:59 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/26 20:23:30 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:48:32 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <assert.h>
-#include <ctype.h>
-#include "ft_isascii.c"
+#include "libft.h"
 
 int ft_isascii(int c);
 

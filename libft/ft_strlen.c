@@ -6,16 +6,18 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:05:05 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/27 18:41:21 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 20:31:24 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+int	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }
