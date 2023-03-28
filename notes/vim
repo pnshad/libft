@@ -1,0 +1,42 @@
+vim
+
+Syntax
+**************************************************************
+Enable syntax 
+:syntax on
+:syntax off
+
+
+Ruler & Ruler format  (line and char counter)
+**************************************************************
+Enable ruler 
+:set ruler
+:set noruler 
+:set rulerformat=%l,%c
+
+Nu (Numbered lines)
+**************************************************************
+To enable or disable the line and column counter in Vim, you can use the set command with the appropriate option.You can also use the 
+:set nu and 
+:set nonu 
+
+Substitute (find and replace) 
+**************************************************************
+:%s/foo/bar/gc
+Change each 'foo' to 'bar', b1ut ask for confirmation first.
+
+:%s/\<foo\>/bar/gc
+Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
+
+
+Copy to clipboard (not active) 
+**************************************************************
+Use the pbcopy command: Select the text you want to copy in Vim editor, then type 
+
+:%y+ 
+
+to copy it to the clipboard.
+
+See unvisible tabs and spaces in vim
+**************************************************************
+Yes, in Vim you can use the list option to display end-of-line characters. You can turn it on by typing :set list and turn it off by typing :set nolist
