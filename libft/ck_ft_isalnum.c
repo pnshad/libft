@@ -6,14 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 06:07:33 by pnourish          #+#    #+#             */
-/*   Updated: 2023/03/27 20:14:48 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:28:38 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <assert.h>
-#include <ctype.h>
-#include "ft_isalnum.c"
+#include "libft.h"
 
 int	main(void)
 {
