@@ -1,5 +1,8 @@
 vim
 
+// this ex command removes the first 3 characters of the lines 13 to 26 (useful when you copied a code with line numbers and you want to clean it), pay attention the small s after 26 is the actual commands, rest are the parameters
+:13,26s/^...//
+
 Syntax
 **************************************************************
 Enable syntax 
