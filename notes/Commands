@@ -1,5 +1,9 @@
 Commands
 
+// create alias for gcc
+alias 42gcc="gcc -Wall -Wextra -Werror"
+
+
 // adds #include "libft.h" to line 13 of all c files in the directory
 // the reason that the command is in two lines, is that there is \n hidden in it
 find . -name '*.c' -type f -exec sed -i '' '13i\
