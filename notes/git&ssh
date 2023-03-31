@@ -1,0 +1,40 @@
+to create the ssh on 42school machine and probably on others
+
+1. ssh-keygen
+
+then add it to agent (maybe first skip this on 42 machines cause they could already have it)
+
+2. eval "$(ssh-agent -s)"
+you'll see agent pis 12345
+
+3. ssh-add ~/.ssh/id_rsa
+
+then to change remote url from https to ssh
+
+to see it before changing use
+
+4. git remove -v 
+
+you'll see 
+origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
+origin  https://github.com/USERNAME/REPOSITORY.git (push) 
+
+then use to change the remote:
+you have to change username and change the repository
+5.git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
+
+for example
+git remote set-url origin git@github.com:pnshad/core.git
+
+then verify
+6. git remove -v
+
+it should look something like this:
+origin  git@github.com:USERNAME/OTHERREPOSITORY.git (fetch)
+origin  git@github.com:USERNAME/OTHERREPOSITORY.git (push)
+
+mine was 
+origin	git@github.com:pnshad/core.git (fetch)
+origin	git@github.com:pnshad/core.git (push)
+
+tada!
