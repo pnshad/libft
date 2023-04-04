@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 18:38:06 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/04 19:40:46 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/05 00:55:40 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int     ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-        while (n > 0 && *(unsigned char *)s1 && *(unsigned char *)s2 && *(unsigned char *)s1 == *(unsigned char *)s2)
+        while (n > 0 && *(unsigned char *)s1 == *(unsigned char *)s2)
         {
                 s1++;
                 s2++;
@@ -22,6 +22,6 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n)
         }
         if (n == 0)
                 return (0);
-        return (*(unsigned char *)s1 - *(unsigned char *)s2);
+        else
+                return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
-
