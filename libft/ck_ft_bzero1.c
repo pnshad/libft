@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ck_ft_bzero2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 15:52:30 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/04 15:35:32 by pnourish         ###   ########.fr       */
+/*   Created: 2023/04/04 17:21:17 by pnourish          #+#    #+#             */
+/*   Updated: 2023/04/04 17:23:44 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t n)
-{
-	unsigned char	*ptr;
+int main() {
+  char str[] = "Hello, world!";
+  size_t len = sizeof(str);
 
-	ptr = (unsigned char *)dest;
-	while (n > 0)
-	{
-		ptr[n-1] = (unsigned char)c;
-		n--;
-	}
-	return (dest);
+  ft_bzero(str, len);
+  bzero(str, len);
+
+  for (size_t i = 0; i < len; i++) {
+    if (str[i] != '\0') {
+      printf("Error: ft_bzero() did not zero out all bytes in str\n");
+      return 1;
+    }
+  }
+
+  printf("Success: ft_bzero() and bzero() both zeroed out str\n");
+
+  return 0;
 }
