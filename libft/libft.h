@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/05 00:55:42 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/05 02:46:23 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <assert.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 // remove upto this line
 
@@ -39,7 +40,7 @@ char	*ft_strrchr(const char *s, int c);
 void	*ft_memset(void *s, int c, size_t n);
 void    *ft_memchr(const void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
-
+void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 
 // global variables 
 
