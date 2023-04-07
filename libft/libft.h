@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/05 22:54:13 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:02:57 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 // remove upto this line
 
