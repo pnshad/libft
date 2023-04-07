@@ -6,17 +6,17 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 20:01:59 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/07 23:45:50 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/08 00:04:38 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 int main(void)
 {
 	char dst5a[5];
-	char dst0a[0];
+	char dst0a[1];
 	char dst1a[1] = {'1'};
 	char dst5b[5];
-	char dst0b[0];
+	char dst0b[1];
 	char dst1b[1] = {'1'};
 	char src2[] = "Hi";
 	char src5[] = "Hello";
@@ -25,7 +25,7 @@ int main(void)
 	size_t d5s2 = 4; 
 	size_t d5s5 = 5;
 	size_t d5s9 = 4;
-	size_t d0s2 = 0;
+	size_t d0s2 = 1;
 	size_t d1s2 = 1;
 	size_t d5sn = 4;
 
@@ -65,6 +65,6 @@ int main(void)
 	printf("sy_strlcpy:\t%s\n", dst5b);
 	assert(strcmp(dst5a, dst5b) == 0);
 
-	printf("the function passed all test cases!");
+	printf("the function passed all test cases!\n");
 	return 0;
 }
