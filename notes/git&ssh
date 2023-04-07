@@ -13,7 +13,7 @@ then to change remote url from https to ssh
 
 to see it before changing use
 
-4. git remove -v 
+4. git remote -v 
 
 you'll see 
 origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
@@ -27,7 +27,7 @@ for example
 git remote set-url origin git@github.com:pnshad/core.git
 
 then verify
-6. git remove -v
+6. git remote -v
 
 it should look something like this:
 origin  git@github.com:USERNAME/OTHERREPOSITORY.git (fetch)
