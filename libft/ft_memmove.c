@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:57:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/05 20:41:27 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/09 01:04:09 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp;
+	char	tmp;
 
-	tmp = (char *)malloc(len);
-	ft_memcpy(tmp, src, len);
-	ft_memcpy(dst, tmp, len);
-	free(tmp);
+	while (len > 0)
+	{
+		tmp = ((const char *)src)[len - 1];
+		((char *)dst)[len - 1] = tmp;
+		len--;
+	}
 	return (dst);
 }
