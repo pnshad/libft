@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/08 22:58:18 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/09 17:50:11 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // other c libraries 
 
 // at the end I have to remove these 
+#include <unistd.h>
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
@@ -34,6 +35,7 @@ int 	ft_isprint(int c);
 int 	ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strlen(const char *s);
+int		ft_atoi(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t  ft_strlcpy(char *dst, const char *src, size_t size);
