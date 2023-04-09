@@ -36,3 +36,16 @@ Here's an example:
 0x7ffeefbff700: ba
 This code uses the fr memory command to display the memory contents of the first byte of dst0a and dst0b.
 The -c 1 argument to fr memory specifies that we want to display one byte of memory at the given address. The & operator is used to get the address of the first byte of each array.
+
+
+
+To see the address of dst14b, you can use the & operator before the variable name to get its address.
+Here's an example of how to get the address of dst14b using the p command:
+(lldb) p &dst14b
+
+
+The address you see is the starting address of the dst14b array in memory. Since dst14b is an array of characters with a length of 6, you can think of it as a contiguous block of memory with 6 bytes.
+To see all the memory addresses of dst14b, you can use the memory read command in lldb. Here's an example of how to use it:
+(lldb) memory read --size 1 --count 6 --format x &dst14b
+
+
