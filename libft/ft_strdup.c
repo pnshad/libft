@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 22:37:45 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/10 20:42:51 by pnourish         ###   ########.fr       */
+/*   Created: 2023/04/10 16:04:20 by pnourish          #+#    #+#             */
+/*   Updated: 2023/04/10 20:41:52 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *src)
 {
-	void	*arr;
+	char	*dst;
+	size_t	len;
 
-	arr = malloc(size * count);
-	if (count == 0 || size == 0 || arr == NULL)
+	if (dst == NULL || src == NULL)
 		return (NULL);
-	while (count > 0)
-	{
-		((char *)arr)[count - 1] = 0;
-		count--;
-	}
-	return (arr);
+	len = ft_strlen(src) + 1;
+	dst = (char *)ft_calloc(len, sizeof(char));
+	ft_strlcpy(dst, src, len);
+	return (dst);
 }
