@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/10 19:53:45 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/11 03:37:57 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char    *ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *src);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_memset(void *s, int c, size_t n);
 void    *ft_memchr(const void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
