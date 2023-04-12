@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 23:29:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/12 17:42:00 by pnourish         ###   ########.fr       */
+/*   Created: 2023/04/12 16:33:13 by pnourish          #+#    #+#             */
+/*   Updated: 2023/04/12 18:52:51 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	dstlen;
-	size_t	srclen;
-	size_t	counter;
+	size_t	onelen;
+	size_t	twolen;
+	char	*dst;
 
-	dstlen = (size_t)ft_strlen(dst);
-	srclen = (size_t)ft_strlen(src);
-	counter = dstlen;
-	if (!(dst == NULL || size == 0))
-	{
-		while (counter < size - 1 && *src)
-		{
-			ft_memmove(dst + counter, src, 1);
-			src++;
-			counter++;
-		}
-		*(dst + counter) = '\0';
-	}
-	return (srclen + dstlen);
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	else if (s1 == NULL || !*s1)
+		s1 = "";
+	else if (s2 == NULL || !*s2)
+		s2 = "";
+	onelen = ft_strlen(s1);
+	twolen = ft_strlen(s2);
+	dst = (char *)malloc((onelen + twolen + 1) * sizeof(char));
+	ft_strlcpy(dst, s1, onelen + 1);
+	ft_strlcat(dst + onelen, s2, twolen + 1);
+	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 01:34:51 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/11 04:01:28 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:47:28 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(void)
 	printf("start: %d\tlen: %zu\n", start, len);
 	printf("src: %s\t", src1);
 	printf("output: %s\n", ft_substr(src1, start, len));
-	assert(ft_strncmp(ft_substr(src1, start, len), "world!", len) == 0);
+	assert(ft_strncmp(ft_substr(src1 + 100, start, len), "world!", len) == 0);
 
 	start = 3;
 	len = 0;
