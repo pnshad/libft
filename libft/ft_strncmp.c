@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:20:30 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/11 03:41:22 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/14 02:52:28 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	if (s1 == NULL && s2 == NULL)
+		return (0);
+	else if (s1 == NULL && s2 != NULL)
+		return (0 - *(unsigned char *)s2);
+	else if (s1 != NULL && s2 == NULL)
+		return (*(unsigned char *)s1);
 	while (n > 0 && *s1 && *s2 && *s1 == *s2)
 	{
 		s1++;

@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:16:00 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/05 20:50:59 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/14 02:54:26 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*ptr = NULL;
+	const char	*ptr;
 
+	ptr = NULL;
+	if (s == NULL)
+		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
