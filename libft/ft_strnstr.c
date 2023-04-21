@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 20:53:07 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/07 17:57:59 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/14 04:10:11 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t		litlen;
 
 	litlen = ft_strlen(little);
-	if (litlen > len || len == 0)
+	if (litlen > len || len == 0 || big == NULL)
 		return (NULL);
 	if (litlen == 0)
 		return ((char *)big);

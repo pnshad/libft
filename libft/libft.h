@@ -6,7 +6,11 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/04/21 12:05:20 by pnourish         ###   ########.fr       */
+=======
+/*   Updated: 2023/04/13 23:53:01 by pnourish         ###   ########.fr       */
+>>>>>>> refs/remotes/origin/main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +50,12 @@ char	*ft_strrchr(const char *s, int c);
 char    *ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+<<<<<<< HEAD
 char    *ft_strjoin(char const *s1, char const *s2);
+=======
+char	*ft_strjoin(char const *s1, char const *s2);
+char 	*ft_strtrim(char const *s1, char const *set);
+>>>>>>> refs/remotes/origin/main
 void	*ft_memset(void *s, int c, size_t n);
 void    *ft_memchr(const void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
