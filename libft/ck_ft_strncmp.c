@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:35:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/14 02:48:32 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/02 01:06:00 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int main(void)
 	// here I'm testing NULL input, as strncmp can't handle NULL we only use ft
 	// if you remove the 'ft_' and change test4 to "" it will check correctly
 	assert(ft_strncmp(test1, test4, 9)==ft_strncmp(test1, test4, 9));
+	printf("function passed all test cases!\n");
 	return (0);
 }

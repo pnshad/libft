@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 02:26:04 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/09 01:04:19 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/02 00:27:44 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int main()
     char dst15[] = "      ";
     char src15[] = "world";
     ft_memmove(dst5, src5, strlen(src5) + 1);
-    printf("NULL_ft_memmove result: %s\n", dst5);
-    printf("NULL_sy_memmove result: %s\n", (char *)memmove(dst15, src15, strlen(src15) + 1));
+    printf("spaced_dst_ft_memmove result: %s\n", dst5);
+    printf("spaced_dst_sy_memmove result: %s\n", (char *)memmove(dst15, src15, strlen(src15) + 1));
     assert(memcmp(dst5, dst15, strlen(src15) + 1) == 0);
 
    printf("All test cases passed!\n");

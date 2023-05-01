@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 16:03:58 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/09 21:37:14 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/01 23:30:11 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
+	int	counter;
 	int	sign;
 	int	result;
 
 	result = 0;
 	sign = 1;
-	i = 0;
-	while (str[i])
+	counter = 0;
+	while (str[counter] && (str[counter] == '\t' || str[counter] == '\n'
+			|| str[counter] == ' ' || str[counter] == '\r'
+			|| str[counter] == '\v' || str[counter] == '\f'))
+			counter++;
+	if ((str[counter] == '-') || (str[counter] == '+'))
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			break ;
-			i++;
-		}
-		if ((str[i] == '-') || (str[i] == '+'))
-		{
-			if (str[i] == '-')
-				sign *= -1;
-		}
-		i++;
+		if (str[counter] == '-')
+			sign *= -1;
+		counter++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i])
-		result = (result * 10) + (str[i++] - '0');
+	while (str[counter] && str[counter] >= '0' && str[counter] <= '9')
+		result = (result * 10) + (str[counter++] - '0');
 	return (sign * result);
 }
