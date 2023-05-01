@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:04:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/10 20:41:52 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/02 00:55:23 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *src)
 	if (dst == NULL || src == NULL)
 		return (NULL);
 	len = ft_strlen(src) + 1;
-	dst = (char *)ft_calloc(len, sizeof(char));
+	dst = (char *)malloc(len * sizeof(char));
 	ft_strlcpy(dst, src, len);
 	return (dst);
 }

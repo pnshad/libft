@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 23:29:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/12 17:42:00 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/04/30 18:11:26 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	size_t	srclen;
 	size_t	counter;
 
-	dstlen = (size_t)ft_strlen(dst);
-	srclen = (size_t)ft_strlen(src);
+	dstlen = 0;
+	while (dst && dst[dstlen])
+		dstlen++;
+	srclen = 0;
+	while (src && src[srclen])
+		srclen++;
 	counter = dstlen;
 	if (!(dst == NULL || size == 0))
 	{
