@@ -1,5 +1,10 @@
 Commands
 
+// to run all -o output files in a directory one after another and showing their name before running them
+for file in ck_ft*.o; do echo "Running $file"; ./$file && wait; done
+
+
+
 // create alias for gcc
 alias 42gcc="gcc -Wall -Wextra -Werror"
 
