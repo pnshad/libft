@@ -1,5 +1,8 @@
 Commands
 
+//shows the dependencies in object files, (you can use gcc -c to create the .o files)
+objdump --syms ft*.o
+
 // to run all -o output files in a directory one after another and showing their name before running them
 for file in ck_ft*.o; do echo "Running $file"; ./$file && wait; done
 
