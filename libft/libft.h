@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/02 00:59:43 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/03 05:54:59 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t len);
 void    *ft_calloc(size_t count, size_t size);
 
-
+// cheking functions prototypes
+void	ck_atoi(void);
+void	ck_bzero(void);
+void	ck_calloc(void);
 // global variables 
 
 
