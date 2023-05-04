@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 02:06:57 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/03 05:51:26 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/03 21:20:08 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void ck_bzero(void)
 	size_t len1 = strlen(str1);
     size_t len3 = sizeof(arr1);
 
-	printf("\nft_bzero testing...\n\n");
+	printf("\nft_bzero will undergo testing...\n\n");
 	
 	// Test case 1: Zero out a string
     printf("Test case 1: Zero out a string\n");
