@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ck_libft.c                                         :+:      :+:    :+:   */
+/*   check.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/03 05:55:03 by pnourish         ###   ########.fr       */
+/*   Created: 2023/05/03 18:58:00 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/03 22:49:51 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef CHECK_H
+#define CHECK_H
 
-int	main(void)
-{
-	ck_atoi();
-	ck_bzero();
-	ck_calloc();
-	return (0);
-}
+// cheking functions prototypes
+
+void    ck_atoi(void);
+void    ck_bzero(void);
+void    ck_calloc(void);
+void	ck_isalnum(void);
+
+#endif

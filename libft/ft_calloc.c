@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 22:37:45 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/10 20:42:51 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/03 20:31:01 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*arr;
 
 	arr = malloc(size * count);
-	if (count == 0 || size == 0 || arr == NULL)
+	if (arr == NULL)
 		return (NULL);
 	while (count > 0)
 	{
