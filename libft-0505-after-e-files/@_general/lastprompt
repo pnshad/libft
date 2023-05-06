@@ -1,0 +1,101 @@
+this code meant to be a replication of c library's strnstri(), please review this code and offer suggestion for improvements and corrections. keep in mind that, unless it's impossible or very impractical I want to use pointers in my code.
+
+also at the end you'll see errors I get when I try to compile
+
+this is the function: (after that you'll find the main)
+
+#include "libft.h"
+
+char    *ft_strnstr(const char *big, const char *little, size_t len)
+{
+        char    *ptrbig;
+        const char *start;
+
+
+        if (!*little)
+                return ((char *)big);
+        while (*big &&  len >= strlen(little))
+        {
+                start = big;
+                ptrbig = (char *)big;
+                while (*ptrbig == *little && *little)
+                {
+                        ptrbig++;
+                        little++;
+                }
+                if (!*little)
+                        return((char *)start);
+                big++;
+                len--;
+                little = (const char *)little - (ptrbig - start);
+        }
+        return (NULL);
+}
+
+int main(void)
+{
+        char *big1 = "in this sentence I want you to try to find this beautiful word, isn't it beautiful";
+        char *little1 = "beautiful";
+        char *little2 = "";
+        char *little3 = "technical";
+        char *little4 = "\0";
+        char *little5 = "this";
+
+        printf("the output of big1 & beautiful is: | %s\n", ft_strnstr(big1, little1, strlen(big1)));
+        printf("the output of big1 & beautiful is: | %s\n", strnstr(big1, little1, strlen(big1)));
+        printf("the output of big1 & \"\" is: | %s\n", ft_strnstr(big1, little2, strlen(big1)));
+        printf("the output of big1 & \"\" is: | %s\n", strnstr(big1, little2, strlen(big1)));
+        printf("the output of big1 & technical is: | %s\n", ft_strnstr(big1, little3, strlen(big1)));
+        printf("the output of big1 & technical is: | %s\n", strnstr(big1, little3, strlen(big1)));
+        printf("the output of big1 & \\0 is: | %s\n", ft_strnstr(big1, little4, strlen(big1)));
+        printf("the output of big1 & \\0 is: | %s\n", strnstr(big1, little4, strlen(big1)));
+        printf("the output of big1 & this is: | %s\n", ft_strnstr(big1, little5, strlen(big1)));
+        printf("the output of big1 & this is: | %s\n", strnstr(big1, little5, strlen(big1)));
+        return (0);
+
+}
+
+compile errors:
+
+ck_ft_strnstr.c: In function ‘main’:
+ck_ft_strnstr.c:25:54: error: implicit declaration of function ‘strnstr’; did you mean ‘strstr’? [-Werror=implicit-function-declaration]
+   25 |  printf("the output of big1 & beautiful is: | %s\n", strnstr(big1, little1, strlen(big1)));
+      |                                                      ^~~~~~~
+      |                                                      strstr
+ck_ft_strnstr.c:25:48: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Werror=format=]
+   25 |  printf("the output of big1 & beautiful is: | %s\n", strnstr(big1, little1, strlen(big1)));
+      |                                               ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                |     |
+      |                                                |     int
+      |                                                char *
+      |                                               %d
+ck_ft_strnstr.c:27:43: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Werror=format=]
+   27 |  printf("the output of big1 & \"\" is: | %s\n", strnstr(big1, little2, strlen(big1)));
+      |                                          ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |     |
+      |                                           |     int
+      |                                           char *
+      |                                          %d
+ck_ft_strnstr.c:29:48: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Werror=format=]
+   29 |  printf("the output of big1 & technical is: | %s\n", strnstr(big1, little3, strlen(big1)));
+      |                                               ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                |     |
+      |                                                |     int
+      |                                                char *
+      |                                               %d
+ck_ft_strnstr.c:31:42: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Werror=format=]
+   31 |  printf("the output of big1 & \\0 is: | %s\n", strnstr(big1, little4, strlen(big1)));
+      |                                         ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                          |     |
+      |                                          |     int
+      |                                          char *
+      |                                         %d
+ck_ft_strnstr.c:33:43: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Werror=format=]
+   33 |  printf("the output of big1 & this is: | %s\n", strnstr(big1, little5, strlen(big1)));
+      |                                          ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |     |
+      |                                           |     int
+      |                                           char *
+      |                                          %d
+cc1: all warnings being treated as errors
+
