@@ -20,7 +20,7 @@ void ck_calloc(void)
 	char	*str_sy;
 	size_t	i;
 
-	printf("ft_calloc will undergo testing...\n\n");
+	printf("ft_calloc  >>> testing...\n\n");
 
 	count = 10;
 	size = sizeof(char);
@@ -109,6 +109,6 @@ void ck_calloc(void)
 	free(str_ft);
 	free(str_sy);
 
-	printf("ft_calloc passed all test cases successfully!\n");
+printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
 }

@@ -24,7 +24,7 @@ void ck_bzero(void)
 	size_t len1 = strlen(str1);
     size_t len3 = sizeof(arr1);
 
-	printf("\nft_bzero will undergo testing...\n\n");
+	printf("\nft_bzero  >>> testing...\n\n");
 	
 	// Test case 1: Zero out a string
     printf("Test case 1: Zero out a string\n");
@@ -84,7 +84,7 @@ void ck_bzero(void)
     // Check that the output of ft_bzero matches bzero
     assert(memcmp(str3, str4, 5) == 0);
 
-    printf("\nft_bzero passed all test cases successfully!\n");
+printf("function passed all test cases successfully!");
 	printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
 	// Print a message indicating that all tests passed
 

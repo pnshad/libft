@@ -26,7 +26,7 @@ void ck_atoi(void)
   int sy_atoi_out;
 
   printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n");
-  printf("\nft_atoi will undergo testing...\n\n");
+  printf("\nft_atoi  >>> testing...\n\n");
 
   printf("Test case 1: input beginning with alphabet\n");
   printf("  input:\t%s\n", input1);
@@ -91,6 +91,6 @@ void ck_atoi(void)
   assert(ft_atoi_out == sy_atoi_out);
   printf("\n");
   
-  printf("\nft_atoi passed all test cases successfully!\n");
+printf("function passed all test cases successfully!");
   printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n");
 }
