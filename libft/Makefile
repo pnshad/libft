@@ -2,9 +2,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-NAME = libft.a
-MAIN = mn_libtest
-EXEC = ex_libtest
+NAME = test_libf.a
+MAIN = test_main
+EXEC = test_exec
 
 SRCS = $(wildcard ft*.c ck*.c)
 OBJS = $(SRCS:.c=.o)

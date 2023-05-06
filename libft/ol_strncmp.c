@@ -30,7 +30,7 @@ int main(void)
 	printf("n:6  ,s1:%s,\ts2=%s\tsys= %d\tft= %d\n", test6, test7, strncmp(test6, test7, 6),ft_strncmp(test6, test7, 6));
 	printf("n:6  ,s1:%s,\ts2=%s\t\tsys= %d\t\tft= %d\n", test6, test8,strncmp(test6, test8, 6),ft_strncmp(test6, test8, 6));
 	printf("n:6  ,s1:%s,\t\ts2=%s\tsys= %d\tft= %d\n", test8, test1,strncmp(test8, test1, 6),ft_strncmp(test8, test1, 6));
-	// here I'm testing NULL input, as strncmp can't handle NULL we only use ft
+	// here I'm >>> testing...LL input, as strncmp can't handle NULL we only use ft
 	// if you remove the 'ft_' and change test4 to "" it will check correctly
 	printf("n:9  ,s1:%s,\ts2=%s\tsys= %d\t\tft= %d\n", test1, test4, ft_strncmp(test1, test4, 9),ft_strncmp(test1, test4, 9));
 	assert(ft_strncmp(test1, test2, 7)==strncmp(test1, test2, 7));
@@ -40,7 +40,7 @@ int main(void)
 	assert(ft_strncmp(test6, test7, 6)==strncmp(test6, test7, 6));
 	assert(ft_strncmp(test6, test8, 6)==strncmp(test6, test8, 6));
 	assert(ft_strncmp(test8, test1, 6)==strncmp(test8, test1, 6));
-	// here I'm testing NULL input, as strncmp can't handle NULL we only use ft
+	// here I'm >>> testing...LL input, as strncmp can't handle NULL we only use ft
 	// if you remove the 'ft_' and change test4 to "" it will check correctly
 	assert(ft_strncmp(test1, test4, 9)==ft_strncmp(test1, test4, 9));
 	printf("function passed all test cases!\n");

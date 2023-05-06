@@ -43,6 +43,6 @@ int main(void)
     printf("sy_output of\n\t%s\n&\n\t%s\nis: | \t%s\n",big1, little5, strnstr(big1, little5, biglen));
     assert(strcmp(ft_strnstr(big1, little5, biglen), strnstr(big1, little5, biglen)) == 0);
 
-	printf("function passed all test cases successfully\n");
+printf("function passed all test cases successfully!");
     return (0);
 }

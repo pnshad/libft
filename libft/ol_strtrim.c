@@ -53,6 +53,6 @@ int	main(void)
     assert(ft_strtrim(NULL, set1) == NULL);
     printf("--- --- --- --- --- --- --- --- --- --- --- \n");
 
-    printf("All tests passed successfully!\n");
+    printf("All test cases passed!\n");
     return (0);
 }
