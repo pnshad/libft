@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 AR = ar rcs
 
-NAME = test_libf.a
+NAME = test_libck.a
 MAIN = test_main
 EXEC = test_exec
 

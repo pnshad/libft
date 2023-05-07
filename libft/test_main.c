@@ -6,12 +6,12 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/06 03:19:22 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/07 03:17:41 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "test_header.h"
+#include "test_libck.h"
 #include <time.h>
 
 int main(void)
@@ -22,7 +22,9 @@ int main(void)
     // Record the start time
     start_time = clock();
 
-    ck_atoi();
+    printf("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+	
+	ck_atoi();
     ck_bzero();
     ck_calloc();
     ck_isalnum();
