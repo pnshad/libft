@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/03 18:59:41 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/07 03:33:09 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define LIBFT_H
 
 // other c libraries 
-
-// at the end I have to remove these 
 #include <unistd.h>
 #include <stdio.h>
 #include <assert.h>
@@ -25,7 +23,8 @@
 #include <stddef.h>
 #include <stdint.h>
 
-// remove upto this line
+// my own header that includes my own functions
+#include "libmy.h"
 
 // function prototypes 
 int 	ft_isalpha(int c);

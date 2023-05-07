@@ -6,12 +6,12 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:58:00 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/06 03:19:24 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/07 03:14:14 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBTEST_H
-#define LIBTEST_H
+#ifndef LIBCK_H
+#define LIBCK_H
 
 // cheking functions prototypes
 

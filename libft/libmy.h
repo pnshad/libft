@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   libmy.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 18:01:01 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/01 23:53:19 by pnourish         ###   ########.fr       */
+/*   Created: 2023/05/07 03:23:27 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/07 03:36:30 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#ifndef LIBMY_H
+#define LIBMY_H
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t n)
-{
-	size_t	srclen;
+// other c libraries
+#include <unistd.h>
+#include <stdio.h>
+#include <assert.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <stdint.h>
 
-	srclen = 0;
-	while (src[srclen] && src)
-		srclen++;
-	if (!(dst == NULL || n == 0))
-	{
-		if (srclen >= n)
-			n = n - 1;
-		else
-			n = srclen;
-		dst[n] = '\0';
-		while (n > 0)
-		{
-			((unsigned char *)dst)[n - 1] = ((unsigned char *)src)[n - 1];
-			n--;
-		}
-	}
-	return (srclen);
-}
+// other custom headers
+#include "libft.h"
+#include "test_libck.h"
+
+// my function prototypes
+void    print_array(void* array, size_t size);
+
+// global variables
+
+
+// structures
+
+#endif
