@@ -6,7 +6,7 @@ NAME = test_libck.a
 MAIN = test_main
 EXEC = test_exec
 
-SRCS = $(wildcard ft*.c ck*.c)
+SRCS = $(wildcard ft*.c ck*.c my*.c)
 OBJS = $(SRCS:.c=.o)
 MAIN_OBJS = $(MAIN).o
 
