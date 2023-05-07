@@ -6,86 +6,70 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 02:06:57 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/03 21:20:08 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/08 01:26:41 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
+#include "libmy.h"
+
+static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, size_t count, char *description);
 
 void ck_bzero(void)
 {
-    char str1[] = "Hello, world!";
-    char str2[] = "Hello, world!";
-    char str3[] = "Hello, world!";
-    char str4[] = "Hello, world!";
-
-    int arr1[] = {1, 2, 3, 4, 5};
-    int arr2[] = {1, 2, 3, 4, 5};
-	size_t len1 = strlen(str1);
-    size_t len3 = sizeof(arr1);
+    char	str[] = "Hello, world!";
+    int		arr[] = {1, 2, 3, 4, 5};
+	size_t	strsize = sizeof(str);
+	size_t	arrsize = sizeof(arr);
+	size_t	s0size = sizeof(str[0]);
+	size_t	a0size = sizeof(arr[0]);
 
 	printf("\nft_bzero  >>> testing...\n\n");
-	
-	// Test case 1: Zero out a string
-    printf("Test case 1: Zero out a string\n");
-    printf("   input:\t%s\n", str1);
-    ft_bzero(str1, len1);
-    printf("ft_bzero:\t%s\n", (char *)str1);
-	printf("   input:\t%s\n", str2);
-    bzero(str2, len1);
-    printf("   bzero:\t%s\n", (char *)str2);
-    assert(memcmp(str1, str2, len1) == 0);
+	printf("%lu is arr0", sizeof(arr[0]));
+	printf("%lu is arr0", sizeof(str[0]));
 
-    // Test case 2: Zero out an array of integers
-    printf("\nTest case 2: Zero out an array of integers\n");
-    
-    printf("   input:\t");
-	for (size_t i = 0; i < 5; i++)
-		printf("%d ", arr1[i]);
-    printf("\n");
-    ft_bzero(arr1, len3);
-    printf("ft_bzero:\t");
-    for (size_t i = 0; i < 5; i++)
-		printf("%d ", arr1[i]);
-    printf("\n");
-    printf("   input:\t");
-	for (size_t i = 0; i < 5; i++)
-		printf("%d ", arr2[i]);
-    printf("\n");
-	bzero(arr2, len3);
-    printf("   bzero:\t");
-    for (size_t i = 0; i < 5; i++)
-    {
-        printf("%d ", arr2[i]);
-    }
-    printf("\n");
+	run_bzero_test_case(str, strsize, s0size, strsize, "1: Zero out a string");
+	run_bzero_test_case(arr, arrsize, a0size, arrsize, "2: Zero out an array of integers");
+	run_bzero_test_case(str, strsize, s0size, strsize - (3 * s0size), "3: Zero out a portion of a string");
+	run_bzero_test_case(arr, arrsize, a0size, arrsize - (1 * a0size), "4: Zero out a portion of an array of integers");
 
-    // Check that the output of ft_bzero matches bzero
-    assert(memcmp(arr1, arr2, len3) == 0);
-
-    // Test case 3: Zero out a portion of a string
-    printf("\nTest case 3: Zero out a portion of a string\n");
-    printf("outputs are not strings and are printed as char arrays\n");
-	printf("   input:\t%s\n", str3);
-    ft_bzero(str3, 5);
-    
-    printf("ft_bzero:\t");
-    for (size_t i = 0; i < len1; i++)
-		printf("%c", str3[i]);
-    printf("\n");
-
-    printf("   input:\t%s\n", str4);
-    bzero(str4, 5);
-    
-
-    printf("   bzero:\t");
-    for (size_t i = 0; i < len1; i++)
-        printf("%c", str4[i]);
-    // Check that the output of ft_bzero matches bzero
-    assert(memcmp(str3, str4, 5) == 0);
-
-printf("function passed all test cases successfully!");
+	printf("function passed all test cases successfully!");
 	printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
-	// Print a message indicating that all tests passed
 
+}
+
+static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, size_t count, char *description)
+{
+    void    *arr_a;
+	void	*arr_b;
+
+    if (elmsize == sizeof(char))
+    	arr_a = (char *)malloc(arrsize * sizeof(char));
+    	arr_b = (char *)malloc(arrsize * sizeof(char));
+    if (elmsize == sizeof(int))
+    	arr_a = (int *)malloc(arrsize * sizeof(int));
+    	arr_b = (int *)malloc(arrsize * sizeof(int));
+    if (!(arr_a || arr_b || array))
+    {
+        fprintf(stderr, "Error: input array is NULL or or its duplication in memory is failed");
+        exit(1);
+    }
+    memcpy(arr_a, array, arrsize * sizeof(elmsize));
+    memcpy(arr_b, array, arrsize * sizeof(elmsize));
+    printf("Test case %s\n", description);
+    printf("   input:\t");
+    print_array(arr_a, arrsize, elmsize);
+    printf("\n");
+    ft_bzero(arr_a, count);
+    printf("ft_bzero:\t");
+    print_array(arr_a, arrsize, elmsize);
+    printf("\n");
+    printf("   input:\t");
+    print_array(arr_b, arrsize, elmsize);
+    printf("\n");
+    bzero(arr_b, count);
+    printf("   bzero:\t");
+    print_array(arr_b, arrsize, elmsize);
+    printf("\n");
+	assert(memcmp(arr_a, arr_b, count) == 0);
 }

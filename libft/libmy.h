@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 03:23:27 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/07 03:36:30 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/08 01:16:25 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #include "test_libck.h"
 
 // my function prototypes
-void    print_array(void* array, size_t size);
+void    print_array(void* array, size_t arrsize, size_t elmsize);
 
 // global variables
 
