@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 05:04:26 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/08 04:02:07 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/08 04:26:43 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ static void	run_calloc_test_case(size_t count, size_t size, size_t case_n)
 {
 	char	*arr_ft;
 	char	*arr_sy;
+	size_t	arrsize;
 
+	arrsize = count * size;
 	printf("Test case %zu: element count = %zu, element size = %zu \n",case_n, count, size);
 	arr_ft = ft_calloc(count, size);
 	arr_sy = calloc(count, size);
@@ -43,15 +45,21 @@ static void	run_calloc_test_case(size_t count, size_t size, size_t case_n)
 	if (arr_ft && arr_sy)
 	{
 		printf("arr_ft:");
-		print_array(arr_ft, count, size);
+		print_array(arr_ft, arrsize, size);
 		printf("\n");
 		printf("arr_sy:");
-		print_array(arr_sy, count, size);
+		print_array(arr_sy, arrsize, size);
 		printf("\n");
 		assert(memcmp(arr_ft, arr_sy, count) == 0);
 	}
 	else
+	{
+		printf("arr_ft:");
+        printf("[]\n\n");
+        printf("arr_sy:");
+        printf("[]\n\n");
 		assert(arr_ft == arr_sy);
+	}
 	free(arr_ft);
 	free(arr_sy);
 }
