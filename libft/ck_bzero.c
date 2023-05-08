@@ -6,56 +6,61 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 02:06:57 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/08 01:26:41 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/08 02:52:27 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
-#include "libmy.h"
+#include "libft.h"
 
+// Define a static helper function to run a test case for ft_bzero
 static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, size_t count, char *description);
 
 void ck_bzero(void)
 {
-    char	str[] = "Hello, world!";
-    int		arr[] = {1, 2, 3, 4, 5};
-	size_t	strsize = sizeof(str);
-	size_t	arrsize = sizeof(arr);
-	size_t	s0size = sizeof(str[0]);
-	size_t	a0size = sizeof(arr[0]);
+    char    str[] = "Hello, world!";
+    int     arr[] = {1, 2, 3, 4, 5};
+    size_t  strsize = sizeof(str);
+    size_t  arrsize = sizeof(arr);
+    size_t  s0size = sizeof(str[0]);
+    size_t  a0size = sizeof(arr[0]);
 
-	printf("\nft_bzero  >>> testing...\n\n");
-	printf("%lu is arr0", sizeof(arr[0]));
-	printf("%lu is arr0", sizeof(str[0]));
+    // Test ft_bzero on various inputs
+    printf("\nft_bzero  >>> testing...\n\n");
 
-	run_bzero_test_case(str, strsize, s0size, strsize, "1: Zero out a string");
-	run_bzero_test_case(arr, arrsize, a0size, arrsize, "2: Zero out an array of integers");
-	run_bzero_test_case(str, strsize, s0size, strsize - (3 * s0size), "3: Zero out a portion of a string");
-	run_bzero_test_case(arr, arrsize, a0size, arrsize - (1 * a0size), "4: Zero out a portion of an array of integers");
+    run_bzero_test_case(str, strsize, s0size, strsize, "1: Zero out a string");
+    run_bzero_test_case(arr, arrsize, a0size, arrsize, "2: Zero out an array of integers");
+    run_bzero_test_case(str, strsize, s0size, strsize - 7, "3: Zero out a portion of a string");
+    run_bzero_test_case(arr, arrsize, a0size, arrsize - 8, "4: Zero out a portion of an array of integers");
 
-	printf("function passed all test cases successfully!");
-	printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
-
+    // Print a success message if all test cases passed
+    printf("function passed all test cases successfully!");
+    printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
 }
 
+// Define a static helper function to run a test case for ft_bzero
 static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, size_t count, char *description)
 {
     void    *arr_a;
-	void	*arr_b;
+    void    *arr_b;
 
+    // Allocate memory for two arrays to store input and output of ft_bzero and bzero
     if (elmsize == sizeof(char))
-    	arr_a = (char *)malloc(arrsize * sizeof(char));
-    	arr_b = (char *)malloc(arrsize * sizeof(char));
-    if (elmsize == sizeof(int))
-    	arr_a = (int *)malloc(arrsize * sizeof(int));
-    	arr_b = (int *)malloc(arrsize * sizeof(int));
-    if (!(arr_a || arr_b || array))
     {
-        fprintf(stderr, "Error: input array is NULL or or its duplication in memory is failed");
-        exit(1);
+        arr_a = malloc(arrsize * sizeof(char));
+        arr_b = malloc(arrsize * sizeof(char));
     }
-    memcpy(arr_a, array, arrsize * sizeof(elmsize));
-    memcpy(arr_b, array, arrsize * sizeof(elmsize));
+    if (elmsize == sizeof(int))
+    {
+        arr_a = malloc(arrsize * sizeof(int));
+        arr_b = malloc(arrsize * sizeof(int));
+    }
+    assert (arr_a && arr_b && array);
+
+    // Copy the original array to the two test arrays
+    memcpy(arr_a, array, arrsize);
+    memcpy(arr_b, array, arrsize);
+
+    // Print the input array and call ft_bzero on arr_a
     printf("Test case %s\n", description);
     printf("   input:\t");
     print_array(arr_a, arrsize, elmsize);
@@ -64,6 +69,8 @@ static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, siz
     printf("ft_bzero:\t");
     print_array(arr_a, arrsize, elmsize);
     printf("\n");
+
+    // Print the input array and call bzero on arr_b
     printf("   input:\t");
     print_array(arr_b, arrsize, elmsize);
     printf("\n");
@@ -71,5 +78,11 @@ static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, siz
     printf("   bzero:\t");
     print_array(arr_b, arrsize, elmsize);
     printf("\n");
-	assert(memcmp(arr_a, arr_b, count) == 0);
+
+    // Assert that the two arrays are equal after running ft_bzero and bzero
+    assert(memcmp(arr_a, arr_b, arrsize) == 0);
+
+    // Free memory used for the test arrays
+    free(arr_a);
+    free(arr_b);
 }
