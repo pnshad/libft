@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 20:33:02 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/10 12:59:36 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:10:16 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // A function to test the ft_memmove function with different test cases
 static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  
                                    void *dst, size_t dst_arr_size, size_t dst_elem_size, char* dst_format, 
-                                   size_t len, int offset, char *des);
+                                   size_t len, size_t overlap_size, char *des);
 
 void    ck_memmove(void)
 {
@@ -23,7 +23,7 @@ void    ck_memmove(void)
     char    *dst; // Destination string
     char    *des; // Description of the test case
     size_t  len;  // Length of the substring to copy
-    int     offset; // Offset to start copying from
+    size_t  overlap_size; // The desired overlap size
 
     printf("ft_memmove >>> testing...\n\n");
 
@@ -32,48 +32,48 @@ void    ck_memmove(void)
     src = "this is copied";
     des = "1: Copying from empty string";
     len = 4;
-    offset = -1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, offset, des);
+    overlap_size = 0;
+    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 2: Copying more characters than available in src
     dst = "hello";
     src = "world";
     des = "2: Copying more characters than available in src";
     len = strlen(src) + 2;
-    offset = -1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, offset, des);
+    overlap_size = 0;
+    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 3: Copying the same number of characters as in src
     dst = "hello";
     src = "world";
     des = "3: Copying the same number of characters as in src";
     len = strlen(src) + 1;
-    offset = -1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, offset, des);
+    overlap_size = 0;
+    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 4: Copying to empty destination
     dst = "     ";
     src = "full";
     des = "4: Copying to empty destination";
     len = strlen(src) + 1;
-    offset = -1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, offset, des);
+    overlap_size = 0;
+    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 5: Copying a part of the string with overlap
     dst = "";
     src = "cold";
     des = "5: Copying a part of the string with overlap";
-    len = strlen(src) + 1;
-    offset = 1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, offset,des);
+    len = strlen(src);
+    overlap_size = strlen(src) - 1;
+    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
 
     // Test case 6: Complete overlap; copying from source on the source 
     dst = "";
     src = "overlap";
     des = "6: Complete overlap; copying from source on the source";
     len = strlen(src) + 1;
-    offset = 0;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, offset,des);
+    overlap_size = strlen(src) + 1;
+    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
 
     printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
@@ -82,23 +82,23 @@ void    ck_memmove(void)
 // A function to run a single test case, comparing the output of ft_memmove and memmove
 static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  
                                    void *dst, size_t dst_arr_size, size_t dst_elem_size, char* dst_format, 
-                                   size_t len, int offset, char *des)
+                                   size_t len, size_t overlap_size, char *des)
 {
     void    *dst_ft; // Destination string copied with ft_memmove
     void    *dst_sy; // Destination string copied with memmove
     void    *src_ft; // Source string copied with ft_memmove
     void    *src_sy; // Source string copied with memmove
 
-    if (offset >= 0) // If there is an offset, adjust the source and destination pointers
+    if (overlap_size <= src_arr_size && overlap_size > 0) // If there is an overlap_size, adjust the source and destination pointers
     {
-        src_ft = malloc(dst_arr_size);
-        src_sy = malloc(dst_arr_size);
+		src_ft = malloc(src_arr_size);
+        src_sy = malloc(src_arr_size);
         memcpy(src_ft, src, src_arr_size);
         memcpy(src_sy, src, src_arr_size);
-        dst_ft = src_ft + offset;
-        dst_sy = src_sy + offset;
-        dst_arr_size = src_arr_size - offset;
-        len = len - offset;
+        dst_ft = src_ft + (src_arr_size - overlap_size);
+        dst_sy = src_sy + (src_arr_size - overlap_size);
+        dst_arr_size = overlap_size;
+        len = overlap_size;
     }
     else // Otherwise, adjust only the destination pointer
     {
@@ -111,6 +111,7 @@ static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_el
     }
 
     printf("Test case %s", des);
+    printf("\n         overlap_size: [%zu]", len);
     printf("\n                  len: [%zu]", len);
     printf("\n               src_ft: [%p]\t", src_ft);
     print_array(src_ft, src_arr_size, src_elem_size, src_format);
@@ -131,7 +132,7 @@ static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_el
     // Compare the output of ft_memmove and memmove
     assert(memcmp(dst_ft, dst_sy, len) == 0);
 
-    if (offset >=0)
+    if (overlap_size <= src_arr_size && overlap_size > 0)
     {
         free(src_ft);
         free(src_sy);

@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 01:12:24 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/06 01:28:45 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:31:07 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,22 @@ void	ck_strchr(void)
     printf("function passed all test cases successfully!\n");
     printf("---- ---- ---- ---- ---- ---- ---- ---- ----\n");
 }
+
+static void run_strchr_test_case(void *qry ,char tgt, char *des)
+    printf("Test case %s\n");
+    printf("          String:");
+	print_array(str)
+    printf("Search character: 'w'\n");
+    printf("ft_strchr output: %p\n", ft_strchr(str1, 'w'));
+    printf("   strchr output: %p\n", strchr(str1, 'w'));
+    assert(ft_strchr(str1, 'w') == strchr(str1, 'w'));
+    printf("\n");
+	
+	// Test case 1: Searching for a character in the middle of a string
+    printf("Test case 1: Searching for a character in the middle of a string\n");
+    printf("String: \"%s\"\n", str1);
+    printf("Search character: 'w'\n");
+    printf("ft_strchr output: %p\n", ft_strchr(str1, 'w'));
+    printf("   strchr output: %p\n", strchr(str1, 'w'));
+    assert(ft_strchr(str1, 'w') == strchr(str1, 'w'));
+    printf("\n");
