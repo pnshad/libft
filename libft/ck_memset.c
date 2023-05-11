@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 00:36:56 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/10 14:13:31 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:55:36 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void run_memset_test_case(size_t arr_size, size_t elem_size, char *format
 	char	*char_f;
 
 	if (!(isprint(set_char)) && (memcmp(format,"%c", 3) == 0))
-		char_f = "\n             set char: 0x%02x";
+		char_f = "\n             set char: 0x%02X";
 	else
 		char_f = "\n             set char: %c";
 
@@ -78,7 +78,7 @@ static void run_memset_test_case(size_t arr_size, size_t elem_size, char *format
 	dst_sy = malloc(arr_size);
 
     printf("Test case %s", des);
-    printf(char_f, set_char);
+    printf(char_f, (unsigned char)set_char);
     printf("\n           set number: [%zu]", set_num);
     printf("\ndst before ft_memset: [%p]\t", dst_ft);
     print_array(dst_ft, arr_size, elem_size, format);
