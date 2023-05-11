@@ -6,11 +6,13 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:25:15 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/04 19:41:49 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/09 21:05:02 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void run_ft_memchr_test_case(char *s, int c, size_t n, size_t case_n);
 
 void	ck_memchr(void)
 {
@@ -24,48 +26,41 @@ void	ck_memchr(void)
 
     printf("ft_memchr  >>> testing...\n\n");
 
-    printf("Test case 1: Search for 'l' in 'hello' (size 5)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test1, 'l', 5));
-    printf("   memchr: %p\n", memchr(test1, 'l', 5));
-    assert(ft_memchr(test1, 'l', 5) == memchr(test1, 'l', 5));
-    printf("\n");
-
-    printf("Test case 2: Search for 'k' in empty string (size 5)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test2, 'k', 5));
-    printf("   memchr: %p\n", memchr(test2, 'k', 5));
-    assert(ft_memchr(test2, 'k', 5) == memchr(test2, 'k', 5));
-    printf("\n");
-
-    printf("Test case 3: Search for 'o' in 'hel\\0lo' (size 6)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test3, 'o', 6));
-    printf("   memchr: %p\n", memchr(test3, 'o', 6));
-    assert(ft_memchr(test3, 'o', 6) == memchr(test3, 'o', 6));
-    printf("\n");
-
-    printf("Test case 4: Search for '0' in '000' (size 4)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test4, '0', 4));
-    printf("   memchr: %p\n", memchr(test4, '0', 4));
-    assert(ft_memchr(test4, '0', 4) == memchr(test4, '0', 4));
-    printf("\n");
-
-    printf("Test case 5: Search for 'l' in '12test' (size 0)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test5, 'l', 0));
-    printf("   memchr: %p\n", memchr(test5, 'l', 0));
-    assert(ft_memchr(test5, 'l', 0) == memchr(test5, 'l', 0));
-    printf("\n");
-
-    printf("Test case 6: Search for '\\t' in '\\n\\t' (size 12)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test6, '\t', 12));
-    printf("   memchr: %p\n", memchr(test6, '\t', 12));
-    assert(ft_memchr(test6, '\t', 12) == memchr(test6, '\t', 12));
-    printf("\n");
-
-    printf("Test case 7: Search for ' ' in '\\r\\v\\f' (size 3)\n");
-    printf("ft_memchr: %p\n", ft_memchr(test7, ' ', 3));
-    printf("   memchr: %p\n", memchr(test7, ' ', 3));
-    assert(ft_memchr(test7, ' ', 3) == memchr(test7, ' ', 3));
-    printf("\n");
-
-printf("function passed all test cases successfully!");
+	run_ft_memchr_test_case(test1, 'l', 5, 1);
+	run_ft_memchr_test_case(test2, 'k', 5, 2);
+	run_ft_memchr_test_case(test3, 'o', 6, 3);
+	run_ft_memchr_test_case(test4, '0', 4, 4);
+	run_ft_memchr_test_case(test5, 'l', 0, 5);
+	run_ft_memchr_test_case(test6, '\t', 12, 6);
+	run_ft_memchr_test_case(test7, ' ', 3, 7);
+	
+	printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
+}
+
+static void run_ft_memchr_test_case(char *s, int c, size_t n, size_t case_n)
+{
+    // Print the description, input string, input number and input character which is showed as ASCII, and if not as HEX
+
+    printf("Test case %zu: Search for ",case_n);
+	print_array(&c, sizeof(char), sizeof(char), "%c");
+	printf(" in ");
+	print_array(s, strlen(s) + 1, sizeof(s[0]), "%c");
+    printf("\n"); 
+	
+	//else
+    //    printf("Test case %zu: Search for '0x%02X' in \"%s\"\n",case_n, (unsigned char)c, s);
+
+    // Print the result of ft_memchr and memchr for the input string and input character 
+    printf("ft_memchr: [%p]\n", ft_memchr(s, c, n));
+    printf(" ft_index: [%ld]\n", ((ft_memchr(s, c, n))-(void*)s)); 
+    printf("   memchr: [%p]\n", memchr(s, c, n));
+    printf(" sy_index: [%ld]\n", ((memchr(s, c, n))-(void*)s)); 
+
+
+    // Use an assertion to verify that the results of ft_memchr and memchr are the same
+    assert(ft_memchr(s, c, n) == memchr(s, c, n));
+
+    // Print a blank line to separate this test case from the next one
+    printf("\n");
 }

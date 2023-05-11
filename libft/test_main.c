@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/07 21:49:53 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/10 00:46:55 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int main(void)
     cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
 
     // Print the CPU time used
-    printf("Time taken: %f seconds\n", cpu_time_used);
+	printf("Time taken: %f seconds\n", cpu_time_used);
+    printf("All functions have passed all their test cases successfully!\n");
 
     return (0);
 }

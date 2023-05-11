@@ -12,53 +12,71 @@
 
 #include "libft.h"
 
+static void run_memcpy_test_case(void *s, size_t arr_size, size_t elem_size, char *format, size_t n, char *des);
+
 void ck_memcpy(void)
 {
-    char src[] = "Hello, World!";
-    char *dst = (char *)malloc(strlen(src) + 1 * sizeof(char));
-    char *dst2 = (char *)malloc(strlen(src) + 1 * sizeof(char));
-    int digsrc[] = {1, 2, 2, 4, 5};
-    int *digdst = (int *)malloc(5 * sizeof(int));
-    int *digdst2 = (int *)malloc(5 * sizeof(int));
+    // Declare source arrays to be copied
+    char strsrc[] = "Hello, World!"; // Source char array
+    int digsrc[] = {1, 2, 2, 4, 5}; // Source int array
+
+    // Print message indicating that the testing is starting
     printf("ft_memcpy >>> testing...\n\n");
 
-    printf("Test case 1: copying 'Hello, World!' into a destination string using ft_memcpy\n");
-    printf("src: \"%s\"\n", src);
-    printf("dst before copying: \"%s\"\n", dst);
-    ft_memcpy(dst, src, strlen(src));
-    printf("dst after ft_memcpy: \"%s\"\n", dst);
-    printf("dst2 before copying: \"%s\"\n", dst2);
-    memcpy(dst2, src, strlen(src));
-	printf("dst2 after memcpy: \"%s\"\n", dst2);
-    assert(strcmp(dst, dst2) == 0);
-    printf("\n");
+    // Run test case 1: copying a char array using ft_memcpy
+    run_memcpy_test_case(strsrc, strlen(strsrc) + 1, sizeof(strsrc[0]), "%c", strlen(strsrc) + 1, "1: copying a char array using ft_memcpy");
 
-    printf("Test case 2: copying {1, 2, 2, 4, 5} into a destination array using ft_memcpy\n");
-    printf("\ndigsrc: {1, 2, 2, 4, 5}\n");
-    for (int i = 0; i < 5; i++)
-        printf("%d\n", digsrc[i]);
-    printf("\ndigdst before copying:\n");
-    for (int i = 0; i < 5; i++)
-        printf("%d\n", digdst[i]);
-    ft_memcpy(digdst, digsrc, 5 * sizeof(int));
-    printf("\ndigdst after ft_memcpy:\n");
-    for (int i = 0; i < 5; i++)
-        printf("%d\n", digdst[i]);
-    
-    printf("\ndigdst2 before copying:\n");
-    for (int i = 0; i < 5; i++)
-        printf("%d\n", digdst2[i]);
-	memcpy(digdst2, digsrc, 5 * sizeof(int));
-    printf("\ndigdst2 after memcpy:\n");
-    for (int i = 0; i < 5; i++)
-        printf("%d\n", digdst2[i]);
-    assert(memcmp(digdst, digdst2, 5 * sizeof(int)) == 0);
-    printf("\n");
-    
-	free(dst);
-    free(dst2);
-    free(digdst);
-    free(digdst2);
-printf("function passed all test cases successfully!");
+    // Run test case 2: copying an int array using ft_memcpy
+    run_memcpy_test_case(digsrc, sizeof(digsrc), sizeof(digsrc[0]), "%d", sizeof(digsrc), "2: copying an int array using ft_memcpy");
+
+    // Print message indicating that all tests passed successfully
+    printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
+}
+
+static void run_memcpy_test_case(void *s, size_t arr_size, size_t elem_size, char *format, size_t n, char *des)
+{
+    // Declare destination arrays to hold copied data
+    void *dst_ft;
+    void *dst_sy;
+
+    // Allocate memory for the destination arrays
+    dst_ft = malloc(arr_size);
+    dst_sy = malloc(arr_size);
+
+    // Print message indicating the test case being run
+    printf("Test case %s", des);
+
+    // Print the source array
+    printf("\n              source: ");
+    print_array(s, arr_size, elem_size, format);
+
+    // Print the destination array before the copy
+    printf("\ndst before ft_memcpy: ");
+    print_array(dst_ft, arr_size, elem_size, format);
+
+    // Run ft_memcpy on the source and destination arrays
+    ft_memcpy(dst_ft, s, n);
+
+    // Print the destination array after the copy
+    printf("\n dst after ft_memcpy: ");
+    print_array(dst_ft, arr_size, elem_size, format);
+
+    // Print the destination array before the copy (for comparison)
+    printf("\n   dst before memcpy: ");
+    print_array(dst_sy, arr_size, elem_size, format);
+
+    // Run memcpy on the source and destination arrays
+    ft_memcpy(dst_sy, s, n);
+
+    // Print the destination array after the copy (for comparison)
+    printf("\n    dst after memcpy: ");
+    print_array(dst_ft, arr_size, elem_size, format);
+
+    // Check that the two destination arrays are equal
+    assert(strcmp(dst_ft, dst_sy) == 0);
+	printf("\n\n");
+    // Free the memory allocated for the destination arrays
+    free(dst_ft);
+    free(dst_sy);
 }
