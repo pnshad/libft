@@ -49,29 +49,29 @@ static void run_memcpy_test_case(void *s, size_t arr_size, size_t elem_size, cha
 
     // Print the source array
     printf("\n              source: ");
-    print_array(s, arr_size, elem_size, format);
+    my_printa(s, arr_size, elem_size, format);
 
     // Print the destination array before the copy
     printf("\ndst before ft_memcpy: ");
-    print_array(dst_ft, arr_size, elem_size, format);
+    my_printa(dst_ft, arr_size, elem_size, format);
 
     // Run ft_memcpy on the source and destination arrays
     ft_memcpy(dst_ft, s, n);
 
     // Print the destination array after the copy
     printf("\n dst after ft_memcpy: ");
-    print_array(dst_ft, arr_size, elem_size, format);
+    my_printa(dst_ft, arr_size, elem_size, format);
 
     // Print the destination array before the copy (for comparison)
     printf("\n   dst before memcpy: ");
-    print_array(dst_sy, arr_size, elem_size, format);
+    my_printa(dst_sy, arr_size, elem_size, format);
 
     // Run memcpy on the source and destination arrays
     ft_memcpy(dst_sy, s, n);
 
     // Print the destination array after the copy (for comparison)
     printf("\n    dst after memcpy: ");
-    print_array(dst_ft, arr_size, elem_size, format);
+    my_printa(dst_ft, arr_size, elem_size, format);
 
     // Check that the two destination arrays are equal
     assert(strcmp(dst_ft, dst_sy) == 0);

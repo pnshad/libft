@@ -43,9 +43,9 @@ static void run_ft_memcmp_test_case(void *s1, void *s2, size_t n, size_t case_n)
 	size_t s2_elmsize = sizeof(s2[0]);
 
     printf("Test case %zu: comparing first %zu elements of these array:\n",case_n ,n);
-	print_array(s1, s1_arrsize, s1_elmsize);
+	my_printa(s1, s1_arrsize, s1_elmsize);
 	printf("\n");
-	print_array(s2, s2_arrsize, s2_elmsize);
+	my_printa(s2, s2_arrsize, s2_elmsize);
     printf("\n");
 
     
@@ -59,7 +59,7 @@ static void run_ft_memcmp_test_case(void *s1, void *s2, size_t n, size_t case_n)
     printf("\n");
 }
 
-void    print_array(void* array, size_t arrsize, size_t elmsize)
+void    my_printa(void* array, size_t arrsize, size_t elmsize)
 {
     size_t  i;
     size_t  arrlen;
