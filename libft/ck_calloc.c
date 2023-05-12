@@ -45,10 +45,10 @@ static void	run_calloc_test_case(size_t count, size_t size, const char *format, 
 	if (arr_ft && arr_sy)
 	{
 		printf("arr_ft:");
-		print_array(arr_ft, arrsize, size, format);
+		my_printa(arr_ft, arrsize, size, format);
 		printf("\n");
 		printf("arr_sy:");
-		print_array(arr_sy, arrsize, size, format);
+		my_printa(arr_sy, arrsize, size, format);
 		printf("\n\n");
 		assert(memcmp(arr_ft, arr_sy, count) == 0);
 	}

@@ -43,9 +43,9 @@ static void run_ft_memchr_test_case(char *s, int c, size_t n, size_t case_n)
     // Print the description, input string, input number and input character which is showed as ASCII, and if not as HEX
 
     printf("Test case %zu: Search for ",case_n);
-	print_array(&c, sizeof(char), sizeof(char), "%c");
+	my_printa(&c, sizeof(char), sizeof(char), "%c");
 	printf(" in ");
-	print_array(s, strlen(s) + 1, sizeof(s[0]), "%c");
+	my_printa(s, strlen(s) + 1, sizeof(s[0]), "%c");
     printf("\n"); 
 	
 	//else

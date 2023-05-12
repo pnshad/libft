@@ -38,9 +38,9 @@ static void run_ft_memcmp_test_case(void *s1, size_t s1_arr_size, size_t s1_elm_
 {
 
     printf("Test case %zu: comparing first %zu elements of these array:\n", case_n, n);
-    print_array(s1, s1_arr_size, s1_elm_size, s1_format);
+    my_printa(s1, s1_arr_size, s1_elm_size, s1_format);
     printf("\n");
-    print_array(s2, s2_arr_size, s2_elm_size, s2_format);
+    my_printa(s2, s2_arr_size, s2_elm_size, s2_format);
     printf("\n");
 
     printf("ft_memcmp: %d\n", ft_memcmp(s1, s2, n));

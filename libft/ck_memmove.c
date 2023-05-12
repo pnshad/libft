@@ -13,7 +13,7 @@
 #include "libft.h"
 
 // A function to test the ft_memmove function with different test cases
-static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  
+static void run_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  
                                    void *dst, size_t dst_arr_size, size_t dst_elem_size, char* dst_format, 
                                    size_t len, size_t overlap_size, char *des);
 
@@ -33,7 +33,7 @@ void    ck_memmove(void)
     des = "1: Copying from empty string";
     len = 4;
     overlap_size = 0;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 2: Copying more characters than available in src
     dst = "hello";
@@ -41,7 +41,7 @@ void    ck_memmove(void)
     des = "2: Copying more characters than available in src";
     len = strlen(src) + 2;
     overlap_size = 0;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 3: Copying the same number of characters as in src
     dst = "hello";
@@ -49,7 +49,7 @@ void    ck_memmove(void)
     des = "3: Copying the same number of characters as in src";
     len = strlen(src) + 1;
     overlap_size = 0;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 4: Copying to empty destination
     dst = "     ";
@@ -57,7 +57,7 @@ void    ck_memmove(void)
     des = "4: Copying to empty destination";
     len = strlen(src) + 1;
     overlap_size = 0;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size, des);
 
     // Test case 5: Copying a part of the string with overlap
     dst = "";
@@ -65,7 +65,7 @@ void    ck_memmove(void)
     des = "5: Copying a part of the string with overlap";
     len = strlen(src);
     overlap_size = strlen(src) - 1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
 
     // Test case 6: Complete overlap; copying from source on the source 
     dst = "";
@@ -73,14 +73,14 @@ void    ck_memmove(void)
     des = "6: Complete overlap; copying from source on the source";
     len = strlen(src) + 1;
     overlap_size = strlen(src) + 1;
-    run2_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
 
     printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
 }
 
 // A function to run a single test case, comparing the output of ft_memmove and memmove
-static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  
+static void run_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  
                                    void *dst, size_t dst_arr_size, size_t dst_elem_size, char* dst_format, 
                                    size_t len, size_t overlap_size, char *des)
 {
@@ -114,19 +114,19 @@ static void run2_memmove_test_case(void *src, size_t src_arr_size, size_t src_el
     printf("\n         overlap_size: [%zu]", len);
     printf("\n                  len: [%zu]", len);
     printf("\n               src_ft: [%p]\t", src_ft);
-    print_array(src_ft, src_arr_size, src_elem_size, src_format);
+    my_printa(src_ft, src_arr_size, src_elem_size, src_format);
     printf("\ndst before ft_memmove: [%p]\t", dst_ft);
-    print_array(dst_ft, dst_arr_size, dst_elem_size, dst_format);
+    my_printa(dst_ft, dst_arr_size, dst_elem_size, dst_format);
     ft_memmove(dst_ft, src, len);
     printf("\n dst after ft_memmove: [%p]\t", dst_ft);
-    print_array(dst_ft, dst_arr_size, dst_elem_size, dst_format);
+    my_printa(dst_ft, dst_arr_size, dst_elem_size, dst_format);
     printf("\n               src_sy: [%p]\t", src_sy);
-    print_array(src_sy, src_arr_size, src_elem_size, src_format);
+    my_printa(src_sy, src_arr_size, src_elem_size, src_format);
     printf("\n   dst before memmove: [%p]\t", dst_sy);
-    print_array(dst_sy, dst_arr_size, dst_elem_size, dst_format);
+    my_printa(dst_sy, dst_arr_size, dst_elem_size, dst_format);
     memmove(dst_sy, src, len);
     printf("\n    dst after memmove: [%p]\t", dst_sy);
-    print_array(dst_sy, dst_arr_size, dst_elem_size, dst_format);
+    my_printa(dst_sy, dst_arr_size, dst_elem_size, dst_format);
     printf("\n\n");
 
     // Compare the output of ft_memmove and memmove

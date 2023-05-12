@@ -63,20 +63,20 @@ static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, cha
     // Print the input array and call ft_bzero on arr_a
     printf("Test case %s\n", description);
     printf("   input:\t");
-    print_array(arr_a, arrsize, elmsize, format);
+    my_printa(arr_a, arrsize, elmsize, format);
     printf("\n");
     ft_bzero(arr_a, count);
     printf("ft_bzero:\t");
-    print_array(arr_a, arrsize, elmsize, format);
+    my_printa(arr_a, arrsize, elmsize, format);
     printf("\n");
 
     // Print the input array and call bzero on arr_b
     printf("   input:\t");
-    print_array(arr_b, arrsize, elmsize, format);
+    my_printa(arr_b, arrsize, elmsize, format);
     printf("\n");
     bzero(arr_b, count);
     printf("   bzero:\t");
-    print_array(arr_b, arrsize, elmsize, format);
+    my_printa(arr_b, arrsize, elmsize, format);
     printf("\n\n");
 
     // Assert that the two arrays are equal after running ft_bzero and bzero
