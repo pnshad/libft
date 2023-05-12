@@ -6,30 +6,31 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:44:10 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/12 23:37:20 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/13 01:00:55 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t st_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+static size_t	st_strlcpy(char *restrict dst, const char *restrict src,
+							size_t dstsize)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    while (src[i] && i < dstsize - 1 && dstsize != 0)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    if (dstsize > 0)
-        dst[i] = '\0';
-    while (src[i])
-        i++;
-    return (i);
+	i = 0;
+	while (src[i] && i < dstsize - 1 && dstsize != 0)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (dstsize > 0)
+		dst[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
 }
 
-static size_t st_count_words(char const *s, char c)
+static size_t	st_count_words(char const *s, char c)
 {
 	size_t	count;
 
@@ -54,18 +55,18 @@ static char	*st_get_word(char const *s, char c)
 	word = (char *)malloc(sizeof(char) * (len + 1));
 	if (!word)
 		return (NULL);
-	st_strlcpy(word ,s , len + 1);
-	return(word);
+	st_strlcpy(word, s, len + 1);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	size_t 	i;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	split = (char**)malloc(sizeof(char*) * (st_count_words(s, c) + 1));
+	split = (chari **)malloc(sizeof(char *) * (st_count_words(s, c) + 1));
 	if (!split)
 		return (NULL);
 	i = 0;
@@ -77,7 +78,7 @@ char	**ft_split(char const *s, char c)
 			if (!split[i])
 				return (NULL);
 			i++;
-			while (*s && *s !=c)
+			while (*s && *s != c)
 				s++;
 		}
 		else
