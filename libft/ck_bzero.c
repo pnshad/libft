@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 02:06:57 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/09 20:31:55 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:04:35 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ void ck_bzero(void)
     run_bzero_test_case(arr, arrsize, a0size, "%d", arrsize, "2: Zero out an array of integers");
     run_bzero_test_case(str, strsize, s0size, "%c", strsize - 7, "3: Zero out a portion of a string");
     run_bzero_test_case(arr, arrsize, a0size, "%d", arrsize - 8, "4: Zero out a portion of an array of integers");
+    run_bzero_test_case(NULL, 0, 4, "%d", 0, "5: Receiving NULL inputs");
 
-    // Print a success message if all test cases passed
+	// Print a success message if all test cases passed
     printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
 }
@@ -43,18 +44,19 @@ static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, cha
     void    *arr_a;
     void    *arr_b;
 
+	arr_a = NULL;
+	arr_b = NULL;
     // Allocate memory for two arrays to store input and output of ft_bzero and bzero
-    if (elmsize == sizeof(char))
+    if ((elmsize == sizeof(char)) && (array))
     {
         arr_a = malloc(arrsize * sizeof(char));
         arr_b = malloc(arrsize * sizeof(char));
     }
-    if (elmsize == sizeof(int))
+    if ((elmsize == sizeof(int)) && (array))
     {
         arr_a = malloc(arrsize * sizeof(int));
         arr_b = malloc(arrsize * sizeof(int));
     }
-    assert (arr_a && arr_b && array);
 
     // Copy the original array to the two test arrays
     memcpy(arr_a, array, arrsize);

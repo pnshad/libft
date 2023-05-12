@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 03:12:15 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/12 00:04:31 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:59:18 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void my_printa(const void *arr, size_t arr_size, size_t elem_size,const char *fo
 	else
 		count = arr_size / elem_size;
     printf("{");
-	if (arr_size > 25 && !(strcmp(format,"%c")))
+	if ((arr_size > 25 && !(strcmp(format,"%c"))) || !arr)
 		printf("%s",(char *)arr);
 	else
 		while (i < count) 

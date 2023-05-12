@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ck_ft_strlcpy.c                                    :+:      :+:    :+:   */
+/*   ck_strlcpy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 20:01:59 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/12 02:12:32 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:34:32 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void ck_strlcpy(void)
 	size_t	num;
 
     // Print header for the test cases
-    printf("ft_strlcat >>> testing...\n\n");
+    printf("ft_strlcpy >>> testing...\n\n");
 
 	// Test case 1: Copying to an empty destinatio with less element than size
     des = "1: Copying to an empty destinationi with less element than size";
@@ -40,7 +40,7 @@ void ck_strlcpy(void)
 
 	// Test case 3: Copying to a single element string
     des = "3: Copying to a single element string";
-	dst = " ";
+	dst = "";
 	src = "Hello, world!";
 	num = 1;
 	run_strlcpy_test_case(src, dst, num, des);
