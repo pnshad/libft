@@ -6,11 +6,13 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 23:29:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/04/30 18:11:26 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/13 17:07:54 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	*st_memmove(void *dst, const void *src, size_t len);
 
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 {
@@ -29,11 +31,24 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	{
 		while (counter < size - 1 && *src)
 		{
-			ft_memmove(dst + counter, src, 1);
+			st_memmove(dst + counter, src, 1);
 			src++;
 			counter++;
 		}
 		*(dst + counter) = '\0';
 	}
 	return (srclen + dstlen);
+}
+
+static void	*st_memmove(void *dst, const void *src, size_t len)
+{
+	char	tmp;
+
+	while (len > 0)
+	{
+		tmp = ((const char *)src)[len - 1];
+		((char *)dst)[len - 1] = tmp;
+		len--;
+	}
+	return (dst);
 }
