@@ -6,14 +6,50 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:44:10 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/13 01:00:55 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/13 16:47:55 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static size_t	st_strlcpy(char *restrict dst, const char *restrict src,
-							size_t dstsize)
+					size_t dstsize);
+
+static size_t	st_count_words(char const *s, char c);
+
+static char		*st_get_word(char const *s, char c);
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	split = (char **)malloc(sizeof(char *) * (st_count_words(s, c) + 1));
+	if (!split)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			split[i] = st_get_word(s, c);
+			if (!split[i])
+				return (NULL);
+			i++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
+			s++;
+	}
+	split[i] = NULL;
+	return (split);
+}
+
+static size_t	st_strlcpy(char *restrict dst, const char *restrict src,
+					size_t dstsize)
 {
 	size_t	i;
 
@@ -57,33 +93,4 @@ static char	*st_get_word(char const *s, char c)
 		return (NULL);
 	st_strlcpy(word, s, len + 1);
 	return (word);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**split;
-	size_t	i;
-
-	if (!s)
-		return (NULL);
-	split = (chari **)malloc(sizeof(char *) * (st_count_words(s, c) + 1));
-	if (!split)
-		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			split[i] = st_get_word(s, c);
-			if (!split[i])
-				return (NULL);
-			i++;
-			while (*s && *s != c)
-				s++;
-		}
-		else
-			s++;
-	}
-	split[i] = NULL;
-	return (split);
 }

@@ -6,11 +6,15 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:04:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/11 23:12:48 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/13 16:49:37 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	st_strlen(const char *s);
+
+static size_t	st_strlcpy(char *restrict dst, const char *src, size_t dstsize);
 
 char	*ft_strdup(const char *src)
 {
@@ -19,10 +23,37 @@ char	*ft_strdup(const char *src)
 
 	if (src == NULL)
 		return (NULL);
-	len = ft_strlen(src) + 1;
+	len = st_strlen(src) + 1;
 	dst = (char *)malloc(len * sizeof(char));
 	if (dst == NULL)
 		return (NULL);
-	ft_strlcpy(dst, src, len);
+	st_strlcpy(dst, src, len);
 	return (dst);
+}
+
+static size_t	st_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+static size_t	st_strlcpy(char *restrict dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] && i < dstsize - 1 && dstsize != 0)
+	{
+		dst[i] = src [i];
+		i++;
+	}
+	if (dstsize > 0)
+		dst[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
 }
