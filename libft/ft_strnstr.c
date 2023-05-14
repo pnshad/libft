@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 20:53:07 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/13 17:16:01 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 02:10:52 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 static int	st_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (n > 0 && (unsigned char *)s1 == (unsigned char *)s2)
+	while (n > 0 && *(unsigned char *)s1 == *(unsigned char *)s2)
 	{
 		s1++;
 		s2++;
