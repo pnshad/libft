@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:58:00 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/14 01:41:39 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 02:49:54 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	ck_split(void);
 void	ck_strlen(void);
 void	ck_strncmp(void);
 void	ck_strnstr(void);
+void	ck_strrchr(void);
 
 #endif
