@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/12 23:49:16 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 01:42:02 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int main(void)
 	ck_strlcat();
 	ck_strlcpy();
 	ck_split();
+	ck_strlen();
+	ck_strncmp();
+	ck_strnstr();
 
 
     // Record the end time
