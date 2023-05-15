@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:58:00 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/15 04:57:33 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:22:33 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	ck_toupper(void);
 void	ck_tolower(void);
 void	ck_itoa(void);
 void	ck_strmapi(void);
+void	ck_striteri(void);
 #endif
