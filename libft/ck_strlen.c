@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:10:41 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/14 00:55:33 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 03:13:00 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ck_strlen(void)
 	run_strlen_test_case("", "2: an empty string");
 
 	// Test case 3: a string of numbers
-	run_strlen_test_case("1234567890", "");
+	run_strlen_test_case("1234567890", "3. a string of numbers");
 
 	// Test case 4: a string with non printable charachter
 	run_strlen_test_case("\n", "4: a string with non printable charachter");

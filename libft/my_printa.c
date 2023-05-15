@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 03:12:15 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/12 16:59:18 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 14:03:48 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void my_printa(const void *arr, size_t arr_size, size_t elem_size,const char *fo
 
 	p = arr;
 	i = 0;
+	if (!(strcmp(format,"%c")) && arr)
+		arr_size = strlen(arr) + 1;
+
 	if (elem_size == 0)
 		count = 0;
 	else

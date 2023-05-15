@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 22:46:32 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/13 00:53:09 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 03:09:23 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ void ck_split(void)
     run_split_test_case(src, c, expected_output_3, des);
 
     // Test Case 4: a string containing multiple consecutive delimiters
-    src = "hello   world";
+    src = "hello   world  I'm   here";
     c = ' ';
     char    *expected_output_4[] = {"hello", "world", NULL};
     des = "4: a string containing multiple consecutive delimiters";
     run_split_test_case(src, c, expected_output_4, des);
 
     // Test Case 5: a string containing a delimiter at the beginning and end
-    src = " hello world ";
+    src = " hello world I'm here ";
     c = ' ';
     char    *expected_output_5[] = {"hello", "world", NULL};
     des = "5: a string containing a delimiter at the beginning and end";
@@ -68,7 +68,7 @@ void ck_split(void)
     run_split_test_case(src, c, expected_output_6, des);
 
     // Test Case 7: a string containing a delimiter as the last character
-    src = "hello,world,";
+    src = "hello,world,I'm,here,";
     c = ',';
     char    *expected_output_7[] = {"hello", "world", NULL};
     des = "7: a string containing a delimiter as the last character";
@@ -82,18 +82,20 @@ void run_split_test_case(char *src, char c, char** expected_output, char *test_c
 {
     printf("Test case %s\n", test_case_description);
 
-    printf("  Source string: \"%s\"\n", src);
+	my_printa(src, strlen(src), sizeof(char), "%c");
 
     char **ft_output = ft_split(src, c);
-    printf("ft_split output:\n");
+    printf("\nft_split output:\n");
     for (int i = 0; ft_output[i] != NULL; i++) {
-        printf("%s\n", ft_output[i]);
+		my_printa(ft_output[i], strlen(ft_output[i]), sizeof(char), "%c");
+		printf("\n");
     }
 
     char **ct_output = ct_split(src, c);
-    printf("ct_split output:\n");
+    printf("\nct_split output:\n");
     for (int i = 0; ct_output[i] != NULL; i++) {
-        printf("%s\n", ct_output[i]);
+		my_printa(ct_output[i], strlen(ct_output[i]), sizeof(char), "%c");
+		printf("\n");
     }
 
     int i = 0;
@@ -103,7 +105,7 @@ void run_split_test_case(char *src, char c, char** expected_output, char *test_c
         i++;
     }
 
-    printf("\n");
+    printf("\n\n");
 
     // Free memory allocated by ft_split and ct_split
     i = 0;

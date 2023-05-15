@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:12:24 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/13 23:48:07 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/14 14:15:49 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *src, char const *set)
 	char	*start;
 	char	*end;
 
-	if (src == NULL)
+	if (!src || !set)
 		return (NULL);
 	srclen = st_strlen(src);
 	start = (char *)src;
