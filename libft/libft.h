@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/15 04:56:33 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/16 00:51:14 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ void	*ft_bzero(void *s, size_t n);
 void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t len);
 void    *ft_calloc(size_t count, size_t size);
+
+void    ft_striteri(char *s, void (*f)(unsigned int, char *));
+
 
 char    **ft_split(char const *s, char c);
 
