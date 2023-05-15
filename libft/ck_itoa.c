@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 19:46:39 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/14 21:11:16 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/15 04:12:23 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void run_itoa_test_case(int n, char *des) {
     printf("%s\n", des);
-    printf("Input: %d\n", n);
+    printf("         Input: %d\n", n);
     char *ft_result = ft_itoa(n);
     char *ct_result = calloc(1, sizeof(char) * 12);
     snprintf(ct_result, 12, "%d", n);
-    printf("ft_itoa output: %s\n", ft_result);
-    printf("ct_itoa output: %s\n", ct_result);
+    printf("ft_itoa output: \"%s\"\n", ft_result);
+    printf("ct_itoa output: \"%s\"\n", ct_result);
     assert(strcmp(ft_result, ct_result) == 0);
     free(ft_result);
     free(ct_result);
+	printf("\n");
 }
 
 void ck_itoa(void) {

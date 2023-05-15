@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/14 19:49:16 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:20:13 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int main(void)
 	ck_toupper();
 	ck_tolower();
 	ck_itoa();
+	ck_strmapi();
 
     // Record the end time
     end_time = clock();
