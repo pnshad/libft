@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/16 00:51:14 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/16 01:54:25 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <fcntl.h>
 
 // my own header that includes my own functions
 #include "libmy.h"
@@ -60,6 +61,7 @@ void    *ft_memmove(void *dst, const void *src, size_t len);
 void    *ft_calloc(size_t count, size_t size);
 
 void    ft_striteri(char *s, void (*f)(unsigned int, char *));
+void    ft_putchar_fd(char c, int fd);
 
 
 char    **ft_split(char const *s, char c);
