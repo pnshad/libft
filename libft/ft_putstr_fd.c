@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_single_main.c                                 :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 23:57:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/06 23:59:57 by pnourish         ###   ########.fr       */
+/*   Created: 2023/05/16 01:31:50 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/17 00:10:33 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "test_header.h"
 
-int	main(void)
+void	ft_putstr_fd(char *s, int fd)
 {
-	ck_strlcat();
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(fd, s, i);
 }

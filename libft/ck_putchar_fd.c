@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 01:53:23 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/16 20:21:05 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/17 01:39:16 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void 	run_putchar_fd_test_case(char *s,char *d)
 	printf("Test case %s\n", d);
     printf("Source (expected output): ");
     my_printa(s, 0, sizeof(char), "%c");
-	int fd = open("test_putchar_fd_file.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644); // open file for writing
+	int fd = open("test_file.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644); // open file for writing
     if (fd == -1)
     {
         perror("unable to create/access the file"); // print error message if file cannot be opened
@@ -51,7 +51,7 @@ void 	run_putchar_fd_test_case(char *s,char *d)
     }
 	close(fd); // close file
     
-	fd = open("test_putchar_fd_file.txt", O_RDONLY); // open file for reading
+	fd = open("test_file.txt", O_RDONLY); // open file for reading
     if (fd == -1)
     {
         perror("unable to access the file"); // print error message if file cannot be opened
@@ -83,7 +83,10 @@ void 	run_putchar_fd_test_case(char *s,char *d)
     my_printa(out_ft, 0, sizeof(char), "%c");
     printf("\n\n");
 	assert(strcmp(out_ft, s) == 0);
-	
+
+    // Delete the file
+    fd = unlink("test_file.txt");
+
     // Free the dynamically allocated buffer
     free(out_ft);
 }
