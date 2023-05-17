@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/16 01:54:25 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/17 02:48:50 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ void    *ft_calloc(size_t count, size_t size);
 
 void    ft_striteri(char *s, void (*f)(unsigned int, char *));
 void    ft_putchar_fd(char c, int fd);
-
+void    ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 char    **ft_split(char const *s, char c);
 

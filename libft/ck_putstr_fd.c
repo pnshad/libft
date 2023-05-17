@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ck_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ck_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 01:53:23 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/17 01:39:16 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/17 01:38:41 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
-void    run_putchar_fd_test_case(char *s,char *d);
+void    run_putstr_fd_test_case(char *s,char *d);
 
-void ck_putchar_fd(void)
+void ck_putstr_fd(void)
 {
-    printf("\nft_putchar_fd >>> testing...\n\n");
+    printf("\nft_putstr_fd >>> testing...\n\n");
 
-    run_putchar_fd_test_case("Hello, World!", "Basic test to see if ft_putchar_fd writes successfully inside a file");
-    run_putchar_fd_test_case("1234567890", "Test with numbers");
-    run_putchar_fd_test_case("Testing\ttab", "Test with tab character");
-    run_putchar_fd_test_case("New\nline", "Test with newline character");
-    run_putchar_fd_test_case("", "Test with empty string");
-    run_putchar_fd_test_case("Special\\ \" ' \n \t", "Test with special characters");
+    run_putstr_fd_test_case("Hello, World!", "Basic test to see if ft_putstr_fd writes successfully inside a file");
+    run_putstr_fd_test_case("1234567890", "Test with numbers");
+    run_putstr_fd_test_case("Testing\ttab", "Test with tab character");
+    run_putstr_fd_test_case("New\nline", "Test with newline character");
+    run_putstr_fd_test_case("", "Test with empty string");
+    run_putstr_fd_test_case("Special\\ \" ' \n \t", "Test with special characters");
+    run_putstr_fd_test_case("This string is longer than the previous ones", "Test with a string that is longer than the previous ones");
+    run_putstr_fd_test_case("\0This string contains a null character", "Test with a string that contains a null character");
 
     printf("function passed all test cases successfully!\n");
     printf("---- ---- ---- ---- ---- ---- ---- ---- ----\n");
 }
 
-void 	run_putchar_fd_test_case(char *s,char *d)
+void 	run_putstr_fd_test_case(char *s,char *d)
 {
-	size_t	i;
-    
 	printf("Test case %s\n", d);
     printf("Source (expected output): ");
     my_printa(s, 0, sizeof(char), "%c");
@@ -44,11 +44,7 @@ void 	run_putchar_fd_test_case(char *s,char *d)
         perror("unable to create/access the file"); // print error message if file cannot be opened
         return;
     }
-	i = 0;
-	while (s[i])
-	{
-    	ft_putchar_fd(s[i++], fd);
-    }
+    ft_putstr_fd(s, fd);
 	close(fd); // close file
     
 	fd = open("test_file.txt", O_RDONLY); // open file for reading
@@ -79,7 +75,7 @@ void 	run_putchar_fd_test_case(char *s,char *d)
     out_ft[file_size + 1] = '\0'; // Add null-terminator at the end of the buffer
 
     close(fd); // close file
-	printf("\n   ft_putchar_fd output): ");
+	printf("\n    ft_putstr_fd output): ");
     my_printa(out_ft, 0, sizeof(char), "%c");
     printf("\n\n");
 	assert(strcmp(out_ft, s) == 0);

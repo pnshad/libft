@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/16 01:55:23 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/17 02:47:21 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ int main(void)
 	ck_strmapi();
 	ck_striteri();
 	ck_putchar_fd();
+	ck_putstr_fd();
+	ck_putendl_fd();
+    ck_putnbr_fd();
 
-
-    // Record the end time
+	// Record the end time
     end_time = clock();
 
     // Calculate the CPU time used
