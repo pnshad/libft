@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/17 02:47:21 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:20:32 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(void)
 	ck_putstr_fd();
 	ck_putendl_fd();
     ck_putnbr_fd();
-
+	ck_lstnew();
 	// Record the end time
     end_time = clock();
 
@@ -66,7 +66,7 @@ int main(void)
     cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
 
     // Print the CPU time used
-	printf("Time taken: %f seconds\n", cpu_time_used);
+	printf("\nTime taken: %f seconds\n", cpu_time_used);
     printf("All functions have passed all their test cases successfully!\n");
 
     return (0);

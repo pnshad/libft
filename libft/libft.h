@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/17 02:48:50 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:37:51 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,17 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <fcntl.h>
+#include <stdarg.h>
 
 // my own header that includes my own functions
 #include "libmy.h"
+
+// structures
+typedef	struct		s_list
+{
+	void			*content;
+	struct	s_list	*next;
+}					t_list;
 
 // function prototypes 
 int 	ft_isalpha(int c);
@@ -68,10 +76,12 @@ void	ft_putnbr_fd(int n, int fd);
 
 char    **ft_split(char const *s, char c);
 
+t_list  *ft_lstnew(void *content);
+
 
 // global variables 
 
 
-// structures
+
 
 #endif
