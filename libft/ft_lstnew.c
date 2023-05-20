@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmy.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 03:23:27 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/20 20:21:50 by pnourish         ###   ########.fr       */
+/*   Created: 2023/05/17 13:52:06 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/18 02:19:23 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBMY_H
-#define LIBMY_H
-
-// other c libraries
-#include <unistd.h>
-#include <stdio.h>
-#include <assert.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdint.h>
-
-// other custom headers
 #include "libft.h"
-#include "test_libck.h"
 
-// my function prototypes
-void my_printa(const void *arr, size_t arr_size, size_t elem_size,const char *format);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_node;
 
-// global variables
-
-
-// structures
-
-#endif
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
+}
