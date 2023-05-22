@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libmy.h                                            :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 03:23:27 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/22 08:19:12 by pnourish         ###   ########.fr       */
+/*   Created: 2023/05/22 05:57:46 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/23 00:56:38 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBMY_H
-#define LIBMY_H
-
-// other c libraries
-#include <unistd.h>
-#include <stdio.h>
-#include <assert.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdint.h>
-
-// other custom headers
 #include "libft.h"
-#include "test_libck.h"
 
-// my function prototypes
-void my_printa(const void *arr, size_t arr_size, size_t elem_size,const char *format);
-
-// global variables
-
-
-// structures
-
-#endif
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
+}

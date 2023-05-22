@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/20 20:20:32 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/23 00:51:22 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int main(void)
 	ck_putendl_fd();
     ck_putnbr_fd();
 	ck_lstnew();
+	ck_lstdelone();
+	ck_lstclear();
 	// Record the end time
     end_time = clock();
 
