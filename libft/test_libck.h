@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:58:00 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/17 13:57:10 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/23 00:50:59 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,6 @@ void	ck_putstr_fd(void);
 void	ck_putendl_fd(void);
 void	ck_putnbr_fd(void);
 void	ck_lstnew(void);
+void	ck_lstdelone(void);
+void	ck_lstclear(void);
 #endif
