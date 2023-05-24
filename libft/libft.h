@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/23 00:50:32 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/24 02:42:49 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,15 @@ void	ft_putnbr_fd(int n, int fd);
 char    **ft_split(char const *s, char c);
 
 t_list  *ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+void    ft_lstadd_back(t_list **lst, t_list *new);
+t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list  *ft_lstlast(t_list *lst);
 
 
 // global variables 
