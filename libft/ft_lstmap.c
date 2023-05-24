@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 01:18:37 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/23 03:01:36 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/24 23:53:07 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
-
 	new_list = NULL;
 	while (lst != NULL)
 	{
@@ -32,6 +31,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&new_list, new_node);
 		lst = lst->next;
 	}
-
 	return (new_list);
 }
