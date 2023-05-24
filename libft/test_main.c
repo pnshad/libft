@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/24 02:44:01 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/24 03:21:17 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int main(void)
 	ck_lstadd_front();
 	ck_lstsize();
 	ck_lstlast();
+	ck_lstadd_back();
 	ck_lstdelone();
 	ck_lstclear();
 	ck_lstiter();
