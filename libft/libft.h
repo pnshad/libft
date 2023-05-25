@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/25 00:15:31 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/25 00:19:56 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <stdarg.h>
 
 // my own header that includes my own functions
-# include "libmy.h"
+# include "my_libmy.h"
 
 // structures
 typedef struct s_list

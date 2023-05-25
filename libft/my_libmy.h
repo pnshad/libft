@@ -6,12 +6,12 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 03:23:27 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/22 08:19:12 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/25 00:20:51 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBMY_H
-#define LIBMY_H
+#ifndef MY_LIBMY_H
+#define MY_LIBMY_H
 
 // other c libraries
 #include <unistd.h>
