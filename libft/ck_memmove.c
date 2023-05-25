@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 20:33:02 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/11 17:10:16 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/25 01:31:06 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,14 @@ void    ck_memmove(void)
     overlap_size = strlen(src) + 1;
     run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
 
-    printf("function passed all test cases successfully!");
+    // Test case 7: Partial overlap; copying from source which is before the destination 
+    src = "abcdefghi";
+    des = "7: Partial overlap; copying from source which is before the destination";
+    len = 6;
+    overlap_size = 7;
+    run_memmove_test_case(src, strlen(src) + 1, sizeof(char), "%c", dst, strlen(dst) + 1, sizeof(char), "%c", len, overlap_size,des);
+    
+	printf("function passed all test cases successfully!");
     printf("\n---- ---- ---- ---- ---- ---- ---- ---- ----\n\n");
 }
 
