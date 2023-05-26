@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 03:14:03 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/24 02:13:11 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:25:43 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst != NULL && new != NULL && *lst)
+	if (lst && new)
 	{
 		new->next = *lst;
 		*lst = new;

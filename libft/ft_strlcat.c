@@ -6,49 +6,37 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 23:29:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/13 17:07:54 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/26 20:24:21 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*st_memmove(void *dst, const void *src, size_t len);
-
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	dstlen;
-	size_t	srclen;
-	size_t	counter;
+	char	*dst;
+	char	*src_start;
+	size_t	dst_length;
+	size_t	space;
 
-	dstlen = 0;
-	while (dst && dst[dstlen])
-		dstlen++;
-	srclen = 0;
-	while (src && src[srclen])
-		srclen++;
-	counter = dstlen;
-	if (!(dst == NULL || size == 0))
+	dst = dest;
+	src_start = (char *)src;
+	space = size;
+	while (space-- && *dst)
+		dst++;
+	dst_length = dst - dest;
+	space = size - dst_length;
+	if (space == 0)
+		return (dst_length + ft_strlen((char *) src));
+	while (*src)
 	{
-		while (counter < size - 1 && *src)
+		if (space > 1)
 		{
-			st_memmove(dst + counter, src, 1);
-			src++;
-			counter++;
+			*dst++ = *src;
+			space--;
 		}
-		*(dst + counter) = '\0';
+		src++;
 	}
-	return (srclen + dstlen);
-}
-
-static void	*st_memmove(void *dst, const void *src, size_t len)
-{
-	char	tmp;
-
-	while (len > 0)
-	{
-		tmp = ((const char *)src)[len - 1];
-		((char *)dst)[len - 1] = tmp;
-		len--;
-	}
-	return (dst);
+	*dst = '\0';
+	return (dst_length + (src - src_start));
 }

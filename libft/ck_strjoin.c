@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 01:58:49 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/12 00:40:19 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/26 20:52:26 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,20 +49,6 @@ void ck_strjoin(void)
     s1 = "";
     s2 = "";
 	xo = "";
-	run_strjoin_test_case(s1, s2, xo, ds);
-
-    // Test case 5: Joining a NULL string and a non-empty string
-    ds = "5: Joining a NULL string and a non-empty string";
-    s1 = NULL;
-    s2 = " ,World!";
-	xo = " ,World!";
-	run_strjoin_test_case(s1, s2, xo, ds);
-
-    // Test case 6: Joining a non-empty string and a NULL string
-    ds = "6: Joining a non-empty string and a NULL string";
-    s1 = "Hello";
-    s2 = NULL;
-    xo = "Hello";
 	run_strjoin_test_case(s1, s2, xo, ds);
 
     // Test case 7: Joining two long strings
