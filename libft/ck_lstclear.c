@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Function to create a new list node with integer content
 t_list *create_node(int value)

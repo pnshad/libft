@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Declare a function that will be used only within this file
 static void run_ft_isalnum_test_case(int c, char *description);

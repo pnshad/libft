@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 void run_split_test_case(char *src, char c, char** expected_output, char *test_case_description);
 char        **ct_split(char const *s, char c);

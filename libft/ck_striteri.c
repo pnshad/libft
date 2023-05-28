@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void ct_striteri(char *s, void (*f)(unsigned int, char *));
 

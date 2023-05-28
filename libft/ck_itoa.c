@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 void run_itoa_test_case(int n, char *des) {
     printf("%s\n", des);

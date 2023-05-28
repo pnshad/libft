@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 01:36:40 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/24 22:16:10 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/27 00:42:51 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,50 +23,52 @@ int main(void)
     start_time = clock();
 
     printf("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-	
+
 	ck_atoi();
-    ck_bzero();
-    ck_calloc();
-    ck_isalnum();
-    ck_isalpha();
+	ck_bzero();
+	ck_calloc();
+	ck_itoa();
+	ck_isalnum();
+	ck_isalpha();
 	ck_isascii();
 	ck_isdigit();
 	ck_isprint();
+	ck_lstadd_back();
+	ck_lstadd_front();
+	ck_lstclear();
+	ck_lstdelone();
+	ck_lstiter();
+	ck_lstlast();
+	ck_lstmap();
+	ck_lstnew();
+	ck_lstsize();
 	ck_memchr();
 	ck_memcmp();
 	ck_memcpy();
 	ck_memmove();
 	ck_memset();
+	ck_putchar_fd();
+	ck_putendl_fd();
+	ck_putnbr_fd();
+	ck_putstr_fd();
+	ck_split();
 	ck_strchr();
 	ck_strdup();
+	ck_striteri();
 	ck_strjoin();
 	ck_strlcat();
 	ck_strlcpy();
-	ck_split();
 	ck_strlen();
+	ck_strmapi();
 	ck_strncmp();
 	ck_strnstr();
 	ck_strrchr();
 	ck_strtrim();
 	ck_substr();
-	ck_toupper();
 	ck_tolower();
-	ck_itoa();
-	ck_strmapi();
-	ck_striteri();
-	ck_putchar_fd();
-	ck_putstr_fd();
-	ck_putendl_fd();
-    ck_putnbr_fd();
-	ck_lstnew();
-	ck_lstadd_front();
-	ck_lstsize();
-	ck_lstlast();
-	ck_lstadd_back();
-	ck_lstdelone();
-	ck_lstclear();
-	ck_lstiter();
-	ck_lstmap();
+	ck_toupper();
+
+
 	// Record the end time
     end_time = clock();
 

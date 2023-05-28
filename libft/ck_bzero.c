@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Define a static helper function to run a test case for ft_bzero
 static void run_bzero_test_case(void *array, size_t arrsize, size_t elmsize, char *format, size_t count, char *description);

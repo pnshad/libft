@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_strnstr_test_case(char *qry ,char *tgt, size_t n, size_t case_n);
 

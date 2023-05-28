@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // The function ck_substr is used to test the ft_substr function.
 // It contains several test cases to ensure the function behaves correctly.

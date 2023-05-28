@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Static function: st_lstnew
 static t_list *st_lstnew(void *content)

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // A function to test the ft_memmove function with different test cases
 static void run_memmove_test_case(void *src, size_t src_arr_size, size_t src_elem_size, char *src_format,  

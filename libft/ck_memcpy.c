@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_memcpy_test_case(void *s, size_t arr_size, size_t elem_size, char *format, size_t n, char *des);
 

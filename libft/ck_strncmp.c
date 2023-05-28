@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 void run_strncmp_test_case(const char *s1, const char *s2, size_t n, size_t case_n);
 

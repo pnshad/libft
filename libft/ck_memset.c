@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Helper function to run a single test case
 static void run_memset_test_case(size_t arr_size, size_t elem_size, char *format, int c, size_t set_num, char *des);

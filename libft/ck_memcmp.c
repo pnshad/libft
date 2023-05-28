@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_ft_memcmp_test_case(void *s1, size_t s1_arr_size, size_t elm_size, char *s1_format, void *s2, size_t s2_arr_size, size_t s2_elm_size , char *s2_format, size_t n, size_t case_n);
 void ck_memcmp(void)

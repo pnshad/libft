@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_strlcpy_test_case(char *src, char *dst, size_t elt, char *des);
 

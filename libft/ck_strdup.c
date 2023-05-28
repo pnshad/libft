@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Function to run a test case for ft_strdup
 static void run_strdup_test_case(char *src, char *des);

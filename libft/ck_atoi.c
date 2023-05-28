@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Declaration of a helper function
 static void run_atoi_test_case(char *input, char *description);

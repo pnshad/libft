@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/25 00:19:56 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/28 03:17:44 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,7 @@
 // other c libraries 
 # include <unistd.h>
 # include <stdio.h>
-# include <assert.h>
-# include <ctype.h>
-# include <string.h>
-# include <stdlib.h>
-# include <stddef.h>
-# include <stdint.h>
-# include <fcntl.h>
-# include <stdarg.h>
-
 // my own header that includes my own functions
-# include "my_libmy.h"
 
 // structures
 typedef struct s_list
@@ -89,5 +79,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
 
 // global variables 
+# undef INT_MIN
+# define INT_MIN (-2147483648)
+# undef INT_MAX
+# define INT_MAX (2147483647)
+# undef LLONG_MAX
+# define LLONG_MAX 9223372036854775807LL
 
 #endif
