@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 char    *ct_strmapi(char const *s, char (*f)(unsigned int, char));
 

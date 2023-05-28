@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 void run_strlen_test_case(char *src, char *des);
 

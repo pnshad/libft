@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_strjoin_test_case(char *s1, char *s2 ,char *oxp, char *des);
 

@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 03:23:27 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/25 00:20:51 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/28 03:15:18 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <limits.h>
 
 // other custom headers
 #include "libft.h"

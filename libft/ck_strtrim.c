@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_strtrim_test_case(char* src, char *set, char* des);
 

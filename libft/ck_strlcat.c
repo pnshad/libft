@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 // Declare function to run strlcat test case
 void run_strlcat_test_case(size_t s1size, char *s1str, char *s2, size_t input, char *description);

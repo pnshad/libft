@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "my_libmy.h"
 
 static void run_ft_memchr_test_case(char *s, int c, size_t n, size_t case_n);
 
