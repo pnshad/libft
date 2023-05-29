@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 16:03:58 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/28 15:51:53 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/28 19:26:59 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ static int	st_iswhite(char c)
 		|| c == '\r' || c == '\v' || c == '\f');
 }
 
-static int	st_edge(int sign, unsigned long long result)
+static int	st_edge(int sign, unsigned long long int result)
 {
 	if (sign > 0 && result > LLONG_MAX)
-		return (sign * (int)LLONG_MAX);
-	if (sign < 0 && result - 1 > LLONG_MAX)
-		return (sign * (int)LLONG_MIN);
-	return (0);
+		return ((int)(LLONG_MAX));
+	else if (sign < 0 && result - 1 > LLONG_MAX)
+		return (0);
+	return (sign * (int)result);
 }
 
 int	ft_atoi(const char *str)
 {
-	int					counter;
-	int					sign;
-	unsigned long long	result;
+	unsigned long long int	result;
+	int						counter;
+	int						sign;
 
 	result = 0;
 	sign = 1;
@@ -48,10 +48,9 @@ int	ft_atoi(const char *str)
 		counter++;
 	while (str[counter] && str[counter] >= '0' && str[counter] <= '9')
 	{
+		if ((result * 10) > ULLONG_MAX - (str[counter] - '0'))
+			return (st_edge(sign, LLONG_MAX));
 		result = (result * 10) + (str[counter++] - '0');
-		if ((result > LLONG_MAX && sign > 0)
-			|| (result - 1 > LLONG_MAX && sign < 0))
-			return (st_edge(sign, result));
 	}
-	return (sign * (int)result);
+	return (st_edge(sign, result));
 }

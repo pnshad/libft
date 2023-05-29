@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:58:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/28 03:17:44 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/28 17:32:36 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // other c libraries 
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 // my own header that includes my own functions
 
 // structures
@@ -85,5 +86,9 @@ t_list	*ft_lstlast(t_list *lst);
 # define INT_MAX (2147483647)
 # undef LLONG_MAX
 # define LLONG_MAX 9223372036854775807LL
+# undef LLONG_MIN
+# define LLONG_MIN (-9223372036854775808LL)
+# undef ULLONG_MAX
+# define ULLONG_MAX (18446744073709551615ULL)
 
 #endif
