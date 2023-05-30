@@ -1,10 +1,13 @@
 #!/bin/bash
 
-mkdir -p /Users/Offline/offlien\ -\ playground/libft_new/libft 
+# Crea la cartella libft_push_ready se non esiste
+mkdir -p libft_push_ready
 
-for file in ft_*.c
-do
-  cp -f "$file" /Users/Offline/offlien\ -\ playground/libft_new/libft/
-done
+# Copia i file ft*.c dalla cartella libft nella cartella di destinazione libft_push_ready
+cp -f libft/ft*.c libft_push_ready/
 
-cp -f libft.h /Users/Offline/offlien\ -\ playground/libft_new/libft/
+# Copia il file libft.h nella cartella di destinazione libft_push_ready
+cp -f libft/libft.h libft_push_ready/
+
+# Copia il file Makefile nella cartella di destinazione libft_push_ready
+cp -f libft/Makefile libft_push_ready/
