@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 22:37:45 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/30 20:52:31 by pnourish         ###   ########.fr       */
+/*   Created: 2023/04/05 01:15:44 by pnourish          #+#    #+#             */
+/*   Updated: 2023/04/14 04:03:21 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" 
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	void	*arr;
-	size_t	i;
-
-	i = 0;
-	arr = (void *)malloc(size * count);
-	if (!arr)
-		return (NULL);
-	else
+	if (dst != NULL && src != NULL)
 	{
-		while (i < count)
+		while (n > 0)
 		{
-			*(unsigned char *)(arr + i++) = 0;
+			((unsigned char *)dst)[n - 1] = ((unsigned char *)src)[n - 1];
+			n--;
 		}
-		return (arr);
 	}
+	return (dst);
 }

@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 22:37:45 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/30 20:52:31 by pnourish         ###   ########.fr       */
+/*   Created: 2023/05/17 01:40:32 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/26 22:18:24 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*arr;
-	size_t	i;
+static void		st_putchar_fd(char c, int fd);
 
-	i = 0;
-	arr = (void *)malloc(size * count);
-	if (!arr)
-		return (NULL);
-	else
-	{
-		while (i < count)
-		{
-			*(unsigned char *)(arr + i++) = 0;
-		}
-		return (arr);
-	}
+static size_t	st_abs(int n);
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+		st_putchar_fd('-', fd);
+	if (st_abs(n / 10))
+		ft_putnbr_fd(st_abs(n / 10), fd);
+	st_putchar_fd('0' + st_abs(n % 10), fd);
+}
+
+static size_t	st_abs(int n)
+{
+	if (n < 0)
+		n = -n;
+	return (n);
+}
+
+static	void	st_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

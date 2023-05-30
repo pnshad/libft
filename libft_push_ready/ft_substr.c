@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 22:37:45 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/30 20:52:31 by pnourish         ###   ########.fr       */
+/*   Created: 2023/04/10 20:53:22 by pnourish          #+#    #+#             */
+/*   Updated: 2023/05/26 20:50:20 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include  "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*arr;
 	size_t	i;
+	size_t	j;
+	char	*str;
 
-	i = 0;
-	arr = (void *)malloc(size * count);
-	if (!arr)
+	if (!s)
 		return (NULL);
-	else
+	if ((int)start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if ((int)len > ft_strlen(s))
+		len = ft_strlen(s);
+	str = (char *) malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		while (i < count)
+		if (i >= start && j < len)
 		{
-			*(unsigned char *)(arr + i++) = 0;
+			str[j++] = s[i];
 		}
-		return (arr);
+		i++;
 	}
+	str[j] = 0;
+	return (str);
 }
