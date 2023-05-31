@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:16:00 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/27 16:54:17 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/31 18:01:26 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strrchr(const char *s, int c)
 
 	ptr = NULL;
 	uc = (unsigned char)c;
-	if (s == NULL)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == uc)
