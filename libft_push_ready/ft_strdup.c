@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:04:20 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/13 16:49:37 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:49:59 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strdup(const char *src)
 	char	*dst;
 	size_t	len;
 
-	if (src == NULL)
-		return (NULL);
 	len = st_strlen(src) + 1;
 	dst = (char *)malloc(len * sizeof(char));
 	if (dst == NULL)

@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 00:57:42 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/27 16:52:38 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:55:18 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	dst_ucp = (unsigned char *)dst;
 	src_ucp = (unsigned char *)src;
-	if (!dst_ucp || !src_ucp)
+	if (!dst_ucp && !src_ucp)
 		return (dst);
 	if (src < dst)
 		while (n--)
