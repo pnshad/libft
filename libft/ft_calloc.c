@@ -6,7 +6,7 @@
 /*   By: pnourish <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 22:37:45 by pnourish          #+#    #+#             */
-/*   Updated: 2023/05/31 18:25:32 by pnourish         ###   ########.fr       */
+/*   Updated: 2023/06/02 20:33:59 by pnourish         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	i;
 
 	i = 0;
-	if (size >= SIZE_MAX / count || count >= SIZE_MAX / size)
-		return (NULL);
+	if (size != 0 && count != 0)
+	{
+		if (size >= SIZE_MAX / count || count >= SIZE_MAX / size)
+			return (NULL);
+	}
 	arr = (void *)malloc(size * count);
 	if (!arr)
 		return (NULL);
