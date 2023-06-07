@@ -45,3 +45,11 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
+$(FT_OBJS) $(CK_OBJS) $(MY_OBJS):
+	make -C ../libft
+
+$(NAME): $(FT_OBJS) $(CK_OBJS) $(MY_OBJS)
+	$(AR) $@ $^
+
+$(EXEC): $(MAIN_OBJS) $(NAME)
+	$(CC) $(CFLAGS) $^ -L../libft -lft -o $@
