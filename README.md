@@ -56,7 +56,7 @@ Contributions to Libft are welcome. If you find a bug or have an idea for a new 
 
 ## License
 
-Libft is released under the MIT License. See the [LICENSE.md](LICENSE.md) file for more details.
+Libft is released under the MIT License. See the [LICENSE](LICENSE.md) file for more details.
 
 ## Acknowledgements
 
