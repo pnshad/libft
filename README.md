@@ -29,6 +29,8 @@ Then, navigate to the libft directory and run the `make` command:
 
 ```bash
 cd libft
+```
+```bash
 make
 ```
 
