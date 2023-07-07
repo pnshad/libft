@@ -1,6 +1,3 @@
-# libft
-42 common core
-
 # Libft
 
 ## Introduction
