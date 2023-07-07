@@ -1,6 +1,5 @@
 # libft
 42 common core
-One moment while I search the internet...
 
 # Libft
 
