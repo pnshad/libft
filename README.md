@@ -22,7 +22,7 @@ Libft includes the following categories of functions:
 To install Libft, clone the repository to your local machine:
 
 ```bash
-git clone [https://github.com/yourusername/libft.git](https://github.com/pnshad/libft)
+git clone https://github.com/yourusername/libft.git
 ```
 
 Then, navigate to the libft directory and run the `make` command:
