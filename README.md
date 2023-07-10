@@ -8,11 +8,92 @@ Libft is a personal C library created as part of the 42 school curriculum. This 
 
 Libft includes the following categories of functions:
 
-- String manipulation: Functions for handling and manipulating strings.
-- Memory management: Functions for managing and manipulating memory.
-- Character checks: Functions for checking the properties of characters.
-- List manipulation: Functions for handling linked lists.
-- Input/Output: Functions for handling input and output.
+### String Manipulation
+
+| Function              | Description                                                |
+|-----------------------|------------------------------------------------------------|
+| ft_strlen             | Calculate the length of a string                           |
+| ft_strcpy             | Copy a string                                              |
+| ft_strncpy            | Copy a string with a specified maximum length              |
+| ft_strdup             | Duplicate a string                                         |
+| ft_strcat             | Concatenate two strings                                    |
+| ft_strncat            | Concatenate two strings with a specified maximum length    |
+| ft_strlcat            | Concatenate two strings with size limitation               |
+| ft_strchr             | Locate the first occurrence of a character in a string     |
+| ft_strrchr            | Locate the last occurrence of a character in a string      |
+| ft_strstr             | Locate a substring in a string                             |
+| ft_strnstr            | Locate a substring in a string with a specified max length |
+| ft_strcmp             | Compare two strings                                        |
+| ft_strncmp            | Compare two strings with a specified maximum length        |
+| ft_strnew             | Create a new string with a specified size                  |
+| ft_strdel             | Delete a string                                            |
+| ft_strclr             | Clear the contents of a string                             |
+| ft_striter            | Apply a function to each character of a string             |
+| ft_striteri           | Apply a function to each character of a string with index   |
+| ft_strmap             | Create a new string by applying a function to each character|
+| ft_strmapi            | Create a new string by applying a function to each character with index|
+| ft_strequ             | Compare two strings lexicographically                      |
+| ft_strnequ            | Compare two strings lexicographically up to a specified maximum length|
+| ft_strsub             | Create a new substring from a string                       |
+| ft_strjoin            | Join two strings                                           |
+| ft_strtrim            | Trim leading and trailing whitespace from a string         |
+| ft_strsplit           | Split a string into an array of substrings                  |
+
+### Memory Management
+
+| Function              | Description                                                |
+|-----------------------|------------------------------------------------------------|
+| ft_memset             | Fill memory with a constant byte                           |
+| ft_bzero              | Set the first n bytes of memory to zero                    |
+| ft_memcpy             | Copy memory area                                           |
+| ft_memccpy            | Copy memory area until a specific character is found       |
+| ft_memmove            | Move memory area                                           |
+| ft_memchr             | Locate the first occurrence of a character in a memory area|
+| ft_memcmp             | Compare memory areas                                       |
+| ft_memalloc           | Allocate memory                                            |
+| ft_memdel             | Free memory                                                |
+
+### Character Checks
+
+| Function              | Description                                                |
+|-----------------------|------------------------------------------------------------|
+| ft_isalpha            | Check if a character is alphabetic                         |
+| ft_isdigit            | Check if a character is a digit                            |
+| ft_isalnum            | Check if a character is alphanumeric                       |
+| ft_isascii            | Check if a character is ASCII                              |
+| ft_isprint            | Check if a character is printable                          |
+| ft_toupper            | Convert a character to uppercase                           |
+| ft_tolower            | Convert a character to lowercase                           |
+
+### List Manipulation
+
+| Function              | Description                                                |
+|-----------------------|------------------------------------------------------------|
+| ft_lstnew             | Create a new list node                                     |
+| ft_lstdelone          | Delete a list node                                         |
+| ft_lstdel             | Delete a list and its content                              |
+| ft_lstadd             | Add a new element at the beginning of a list               |
+| ft_lstiter            | Apply a function to each element of a list                 |
+| ft_lstmap             | Create a new list resulting from the application of a function to each element of a list|
+
+### Input/Output
+
+| Function              | Description                                                |
+|-----------------------|------------------------------------------------------------|
+| ft_putchar            | Output a character to the standard output                  |
+| ft_putstr             | Output a string to the standard output                     |
+| ft_putendl            | Output a string to the standard output followed by a newline character|
+| ft_putnbr             | Output an integer to the standard output                   |
+| ft_putchar_fd         | Output a character to a specified file descriptor          |
+| ft_putstr_fd          | Output a string to a specified file descriptor             |
+| ft_putendl_fd         | Output a string to a specified file descriptor followed by a newline character|
+| ft_putnbr_fd          | Output an integer to a specified file descriptor           |
+
+## Folder Structure
+
+The project that has been submitted with a score of 125 is located in the `libft_125_submitted` folder. The ongoing development of other projects is located in the `new_libft` folder. 
+
+Please note that the functions beginning with `ft_np_` inside the `new_libft` folder are NULL protected, providing additional safety measures.
 
 ## Installation
 
@@ -26,8 +107,6 @@ Then, navigate to the libft directory and run the `make` command:
 
 ```bash
 cd libft
-```
-```bash
 make
 ```
 
