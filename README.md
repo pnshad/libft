@@ -146,6 +146,52 @@ Then, when compiling your project, link the `libft.a` file:
 ```bash
 gcc -L. -lft yourfile.c -o yourprogram
 ```
+Certainly! Here's an updated version of the README section that mentions the Supreme-Tester-Libft and libft-tester-tokyo:
+
+```markdown
+
+## Testing
+
+To thoroughly test your Libft implementation, it is recommended to combine the use of two different testers:
+
+1. [Supreme Tester Libft](https://github.com/FranFrau/Supreme-Tester-Libft): This tester includes a wide range of test cases to assess the correctness and performance of your Libft functions. Please follow the instructions provided in the Supreme Tester Libft repository to run the tests effectively. Here are the installation instructions:
+
+   WARNING: This script uses some testers made by students of the 42 network. Be aware and test it on your own, as we never know if the moulinette has been updated. See if and where it fails, and understand what the testers tell you.
+
+   Installation:
+   - The folder name must be called "libft".
+   - Run `sh tester.sh` to execute the tests.
+   - Edit the 8th row in `libft-war-machine/my_config.sh` file to specify the correct path to your Libft directory.
+
+   Testers:
+   - [y3ll0w42](https://github.com/y3ll0w42/libft-war-machine)
+   - [jtoty](https://github.com/jtoty/Libftest.git)
+   - [Tripouille](https://github.com/Tripouille/libftTester.git)
+   - [alelievr](https://github.com/alelievr/libft-unit-test.git)
+   - [adrossig](https://github.com/adrossig/libft_tester.git)
+
+2. [libft-tester-tokyo](https://github.com/usatie/libft-tester-tokyo): This tester is specifically designed for the Libft project and includes additional test cases to validate your implementation. Refer to the instructions in the libft-tester-tokyo repository to execute the tests accurately. Here are the usage instructions:
+
+   Clone this repository to the root directory of your Libft repository:
+   ```bash
+   cd /path/to/your/libft/directory
+   git clone https://github.com/usatie/libft-tester-tokyo.git
+   cd libft-tester-tokyo
+   ```
+
+   Run the following commands to test your Libft functions:
+   ```bash
+   make all             # Test mandatory functions
+   make libft-00        # Test Libft-00 ~ Libft-02 (change part number as per your project)
+   make bonus           # Test bonus functions
+   make strlen          # Test individual function (e.g., strlen)
+   make norm            # Run Norminette & coding rules
+   ```
+
+   Please note that you can add more test cases and contribute to the tester by sending issues/PRs.
+
+By combining these two testers, you can ensure comprehensive testing of your Libft library.
+```
 
 ## Contributing
 
