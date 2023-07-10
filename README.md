@@ -146,7 +146,6 @@ Then, when compiling your project, link the `libft.a` file:
 ```bash
 gcc -L. -lft yourfile.c -o yourprogram
 ```
-Certainly! Here's an updated version of the README section that mentions the Supreme-Tester-Libft and libft-tester-tokyo:
 
 ```markdown
 
