@@ -4,6 +4,21 @@
 
 Libft is a personal C library created as part of the 42 school curriculum. This library is designed to help students understand the basics of C programming, including memory management, data structures, and algorithms. It includes a variety of functions, from basic string manipulation to more complex data structure operations.
 
+## Description
+
+![Results](results.png)
+
+This project is your very first project as a student at 42. You will need to recode a few functions of the C standard library as well as some other utility functions that you will use during your whole cursus.
+
+**Achievement:**
+- Libft: Success
+- Score: 125
+- Time Spent: Solo – about 70 hours – 462 XP
+
+Keywords: Unix logic
+
+Skills: Rigor, Algorithms & AI, Imperative programming
+
 ## Features
 
 Libft includes the following categories of functions:
