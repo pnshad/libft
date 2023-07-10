@@ -19,6 +19,10 @@ Keywords: Unix logic
 
 Skills: Rigor, Algorithms & AI, Imperative programming
 
+## Guidelines and Resources
+
+- [Subject Guidelines](libft.en.subject.pdf): This PDF document contains the guidelines and instructions for the Libft project. It provides detailed information on the requirements and expectations of the project. Please refer to this document for a comprehensive understanding of the project goals and specifications.
+
 ## Features
 
 Libft includes the following categories of functions:
