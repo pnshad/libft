@@ -146,7 +146,6 @@ Then, when compiling your project, link the `libft.a` file:
 ```bash
 gcc -L. -lft yourfile.c -o yourprogram
 ```
-
 ## Testing
 
 To thoroughly test your Libft implementation, it is recommended to combine the use of two different testers:
@@ -188,7 +187,6 @@ To thoroughly test your Libft implementation, it is recommended to combine the u
    Please note that you can add more test cases and contribute to the tester by sending issues/PRs.
 
 By combining these two testers, you can ensure comprehensive testing of your Libft library.
-
 
 ## Contributing
 
