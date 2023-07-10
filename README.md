@@ -147,8 +147,6 @@ Then, when compiling your project, link the `libft.a` file:
 gcc -L. -lft yourfile.c -o yourprogram
 ```
 
-```markdown
-
 ## Testing
 
 To thoroughly test your Libft implementation, it is recommended to combine the use of two different testers:
