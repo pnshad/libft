@@ -112,7 +112,7 @@ Libft includes the following categories of functions:
 
 The project that has been submitted with a score of 125 is located in the `libft_125_submitted` folder. The ongoing development of other projects is located in the `new_libft` folder.
 
-Please note that the functions beginning with `ft_np_` inside the `new_libft` folder are NULL protected, providing additional safety measures.
+Please note that the functions beginning with `np_` inside the `new_libft` folder are NULL protected, providing additional safety measures.
 
 The `extra` folder contains content related to development of my own libft test (currently under development). This folder may include additional test files, scripts, or other resources used in the testing process.
 
