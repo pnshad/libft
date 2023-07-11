@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// other c libraries 
+// other c libraries
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -26,7 +26,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-// function prototypes 
+// function prototypes
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -43,7 +43,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 char	*ft_strchr(const char *s, int c);
-char	*ft_strchr_np(char *s, int c);
+char	*ft_strchr_np1(char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *src);
@@ -79,7 +79,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
 
-// global variables 
+// global variables
 # undef INT_MIN
 # define INT_MIN (-2147483648)
 # undef INT_MAX

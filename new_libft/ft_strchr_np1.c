@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strchr_np(char *s, int c)
+char	*ft_strchr_np1(char *s, int c)
 {
 	unsigned char	uc;
 
