@@ -11,6 +11,7 @@ Libft is a personal C library created as part of the 42 school curriculum. This 
 This project is your very first project as a student at 42. You will need to recode a few functions of the C standard library as well as some other utility functions that you will use during your whole cursus.
 
 **Achievement:**
+
 - Libft: Success
 - Score: 125
 - Time Spent: Solo – about 70 hours – 462 XP
@@ -146,6 +147,7 @@ Then, when compiling your project, link the `libft.a` file:
 ```bash
 gcc -L. -lft yourfile.c -o yourprogram
 ```
+
 ## Testing
 
 To thoroughly test your Libft implementation, it is recommended to combine the use of two different testers:
@@ -169,6 +171,7 @@ To thoroughly test your Libft implementation, it is recommended to combine the u
 2. [libft-tester-tokyo](https://github.com/usatie/libft-tester-tokyo): This tester is specifically designed for the Libft project and includes additional test cases to validate your implementation. Refer to the instructions in the libft-tester-tokyo repository to execute the tests accurately. Here are the usage instructions:
 
    Clone this repository to the root directory of your Libft repository:
+
    ```bash
    cd /path/to/your/libft/directory
    git clone https://github.com/usatie/libft-tester-tokyo.git
@@ -176,6 +179,7 @@ To thoroughly test your Libft implementation, it is recommended to combine the u
    ```
 
    Run the following commands to test your Libft functions:
+
    ```bash
    make all             # Test mandatory functions
    make libft-00        # Test Libft-00 ~ Libft-02 (change part number as per your project)
